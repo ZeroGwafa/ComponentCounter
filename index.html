@@ -67,17 +67,17 @@ function readChatbox() {
 	}
 }
 
-document.ready = readChatBox();
 	
 function hide(test)
 {
     $("table").hide();
     $("."+test.id).show();
 }
-    function load(){
-        $("table").hide();
+document.ready = function()
+{
+	$("table").hide();
         $(".common").show();
-    };
+};
 </script>
 </head>
 <body class="nis" onload="load()">
