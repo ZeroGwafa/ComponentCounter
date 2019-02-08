@@ -11,74 +11,6 @@
 	<script type="text/javascript" src="/ComponentCounter/scripts/chatbox.js"></script>
 	<!-- Telos main script 
 	<script type="text/javascript" src="/scripts/script.js"></script>-->
-<script>
-var reader = new ChatBoxReader();
-var old_lines = [];
-var stamps_used = false;
-var list = ["Simple parts", "Magic parts", "Spiritual parts", "Stave parts", "Tensile parts", "Head parts", "Connector parts", "Cover parts", "Organic parts", "Crafted parts", "Plated parts", "Padded parts", "Crystal parts", "Blade parts", "Delicate parts", "Clear parts", "Smooth parts", "Spiked parts", "Deflecting parts", "Base parts", "Metallic parts", "Flexible parts", "Refined components", "Powerful components", "Healthy components", "Stunning components", "Enhancing components", "Evasive components", "Precious components", "Pious components", "Living components", "Ethereal components", "Variable components", "Dextrous components", "Strong components", "Swift components", "Imbued components", "Direct components", "Subtle components", "Light components", "Protective components", "Sharp components", "Heavy components", "Precise components", "Brassican components", "Knightly components", "Dragonfire components", "Fungal components", "Explosive components", "Corporeal components", "Armadyl components", "Bandos components", "Saradomin components", "Seren components", "Zamorak components", "Zaros components", "Resilient components", "Silent components", "Noxious components", "Rumbling components", "Pestiferous components", "Fortunate components", "Ancient components", "Culinary components", "Shifting components", "Harnessed components", "Oceanic components", "Ascended components", "Undead components", "Avernic components", "Shadow components", "Ilujankan components", "Cywir components", "Faceted components", "Clockwork components"]
-
-
-function readChatbox() {
-    reader.find();
-	reader.diffRead = !stamps_used;
-	reader.readargs = {
-		colors: [
-
-		],
-		backwards: true
-	};
-	var minoverlap 	= 50;
-	var new_lines 	= [];
-	var opts 		= reader.read() || [];
-
-	// Filter old readings
-	if (stamps_used) {
-		//console.log('stamps found!');
-		for (var a = 0; a < opts.length; a++) {
-			//console.log("unfiltered: " + opts[a].text);
-			var match = false;
-			for (var i = 0; i < old_lines.length; i++) {
-				if (reader.matchLines(opts[a].text, old_lines[i].text)) {
-					match = true;
-					break;
-				}
-			}
-			if (!match) {
-				old_lines.push(opts[a]);
-				new_lines.push(opts[a]);
-			}
-		}
-		if (old_lines.length > minoverlap) old_lines.splice(0, old_lines.length - minoverlap); 
-		opts = new_lines;
-	}
-	for (a = 0; a < opts.length; a++) {
-		// Get the timestamp of the line
-		//console.log(opts[a].text);
-		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
-		if (stamp) stamps_used = true;
-		// Instance made
-		if (opts[a].text.indexOf("Materials") !== -1) {
-			var mats = opts[a].text.split("Materials gained: ")[1].split(" x ")[1];
-            var count = opts[a].text.split("Materials gained: ")[1].split(" x ")[0];
-            
-            //$(".curestate").html($(".curestate").html() + opts[a].text +"<br>");
-		}
-		
-	}
-}
-
-	
-function hide(test)
-{
-    $("table").hide();
-    $("."+test.id).show();
-}
-document.ready = function()
-{
-	$("table").hide();
-        $(".common").show();
-};
-</script>
 </head>
 <body class="nis">
 	<div class="header">
@@ -178,5 +110,74 @@ document.ready = function()
         <tr><td>Zaros components</td><td></td></tr>
     </table>
 	</div>
+	
+<script>
+var reader = new ChatBoxReader();
+var old_lines = [];
+var stamps_used = false;
+var list = ["Simple parts", "Magic parts", "Spiritual parts", "Stave parts", "Tensile parts", "Head parts", "Connector parts", "Cover parts", "Organic parts", "Crafted parts", "Plated parts", "Padded parts", "Crystal parts", "Blade parts", "Delicate parts", "Clear parts", "Smooth parts", "Spiked parts", "Deflecting parts", "Base parts", "Metallic parts", "Flexible parts", "Refined components", "Powerful components", "Healthy components", "Stunning components", "Enhancing components", "Evasive components", "Precious components", "Pious components", "Living components", "Ethereal components", "Variable components", "Dextrous components", "Strong components", "Swift components", "Imbued components", "Direct components", "Subtle components", "Light components", "Protective components", "Sharp components", "Heavy components", "Precise components", "Brassican components", "Knightly components", "Dragonfire components", "Fungal components", "Explosive components", "Corporeal components", "Armadyl components", "Bandos components", "Saradomin components", "Seren components", "Zamorak components", "Zaros components", "Resilient components", "Silent components", "Noxious components", "Rumbling components", "Pestiferous components", "Fortunate components", "Ancient components", "Culinary components", "Shifting components", "Harnessed components", "Oceanic components", "Ascended components", "Undead components", "Avernic components", "Shadow components", "Ilujankan components", "Cywir components", "Faceted components", "Clockwork components"]
+
+
+function readChatbox() {
+    reader.find();
+	reader.diffRead = !stamps_used;
+	reader.readargs = {
+		colors: [
+
+		],
+		backwards: true
+	};
+	var minoverlap 	= 50;
+	var new_lines 	= [];
+	var opts 		= reader.read() || [];
+
+	// Filter old readings
+	if (stamps_used) {
+		//console.log('stamps found!');
+		for (var a = 0; a < opts.length; a++) {
+			//console.log("unfiltered: " + opts[a].text);
+			var match = false;
+			for (var i = 0; i < old_lines.length; i++) {
+				if (reader.matchLines(opts[a].text, old_lines[i].text)) {
+					match = true;
+					break;
+				}
+			}
+			if (!match) {
+				old_lines.push(opts[a]);
+				new_lines.push(opts[a]);
+			}
+		}
+		if (old_lines.length > minoverlap) old_lines.splice(0, old_lines.length - minoverlap); 
+		opts = new_lines;
+	}
+	for (a = 0; a < opts.length; a++) {
+		// Get the timestamp of the line
+		//console.log(opts[a].text);
+		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
+		if (stamp) stamps_used = true;
+		// Instance made
+		if (opts[a].text.indexOf("Materials") !== -1) {
+			var mats = opts[a].text.split("Materials gained: ")[1].split(" x ")[1];
+            var count = opts[a].text.split("Materials gained: ")[1].split(" x ")[0];
+            
+            //$(".curestate").html($(".curestate").html() + opts[a].text +"<br>");
+		}
+		
+	}
+}
+
+	
+function hide(test)
+{
+    $("table").hide();
+    $("."+test.id).show();
+}
+document.ready = function()
+{
+	$("table").hide();
+        $(".common").show();
+};
+</script>	
 </body>
 </html>
