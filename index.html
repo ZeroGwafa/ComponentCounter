@@ -67,10 +67,8 @@ function readChatbox() {
 	}
 }
 
-function start()
-{        
-    readChatBox();
-}
+document.ready = readChatBox();
+	
 function hide(test)
 {
     $("table").hide();
