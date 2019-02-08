@@ -1,9 +1,9 @@
 {
 	"appName": "ChatReader",
 	"description": "Test App",
-	"appUrl":"./",
-	"configUrl":"./appconfig.json",
-	"iconUrl": "images/ZG.jpg",
+	"appUrl":"https://github.com/ZeroGwafa/ComponentCounter/",
+	"configUrl":"https://github.com/ZeroGwafa/ComponentCounter/appconfig.json",
+	"iconUrl": "https://github.com/ZeroGwafa/ComponentCounter/images/ZG.jpg",
 	"defaultWidth": 275,
 	"defaultHeight": 575,
 	"minWidth": 200,
