@@ -137,12 +137,6 @@
         var minoverlap 	= 40;
         var new_lines 	= [];
         var opts 		= reader.read() || [];
-        
-        var stamp = opts[0].text.match(/(\d\d:\d\d:\d\d)/);
-        if (stamp)
-            stamps_used = true;
-        else
-            stamps_used = false;
 
         // Filter old readings
         if (stamps_used) {
@@ -165,6 +159,12 @@
             opts = new_lines;
         }
         for (a = 0; a < opts.length; a++) {
+            var stamp = opts[0].text.match(/(\d\d:\d\d:\d\d)/);
+            if (stamp)
+                stamps_used = true;
+            else
+                stamps_used = false;
+            
             if (opts[a].text.indexOf("Materials") !== -1) {
                 //console.log(opts[a].text);
                 var raw = opts[a].text.split("Materials gained: ")[1].trim().split(",");
