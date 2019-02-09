@@ -124,6 +124,7 @@
         list2.fill(0);
 
 var stamps_used = false;
+    var skip = 0;
 function readChatbox() {
 	reader.diffRead = !stamps_used;
 	reader.readargs = {
@@ -162,7 +163,7 @@ function readChatbox() {
 		console.log(opts[a].text);
 		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
 		if (stamp) stamps_used = true;
-            if (opts[a].text.indexOf("Materials") !== -1) {
+            if (opts[a].text.indexOf("Materials") !== -1 && skip != 0) {
                 //console.log(opts[a].text);
                 var raw = opts[a].text.split("Materials gained: ")[1].trim().split(",");
                 //[1 x Junk]
@@ -179,7 +180,7 @@ function readChatbox() {
 });
                     }
             }
-
+        skip = 1;
         }
     }
 
