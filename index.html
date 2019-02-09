@@ -122,6 +122,7 @@
     var list2 = new Array();
         list2.length = 75;
         list2.fill(0);
+    var count, mats, index;
 
 var stamps_used = false;
 function readChatbox() {
@@ -167,15 +168,14 @@ function readChatbox() {
                 for (var x in raw)
                     {
                         console.log(x);
-                        var count = raw[x].split(" x ")[0]; //1
-                        var mats = raw[x].split(" x ")[1].trim(); //Junk
-                        var index = list.indexOf(mats);//Get index of mat based off of list.
-                        
-                        list2[index] += Number(count); //add count to index of second list.
-                        $("tr:not(:first) > td:nth-child(2)").each(function(e){
-    $(this).text(list2[e]);//update all table rows.
-});
+                        count = raw[x].split(" x ")[0]; //1
+                        mats = raw[x].split(" x ")[1].trim(); //Junk
+                        index = list.indexOf(mats);//Get index of mat based off of list.
                     }
+                list2[index] += Number(count); //add count to index of second list.
+                $("tr:not(:first) > td:nth-child(2)").each(function(e){
+                    $(this).text(list2[e]);//update all table rows.
+                    });
             }
         }
     }
