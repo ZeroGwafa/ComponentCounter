@@ -166,11 +166,11 @@ function readChatbox() {
     function hide(test)
     {
         $("table").hide();
-        $(".ui ."+test.id).show();
+        $(".ui, ."+test.id).show();
     }
 
     $("table").hide();
-    $(".common .ui").show();
+    $(".common, .ui").show();
     var tracker;
     $("button.tracker").click(function(){
         if($(this).html() == "Start Tracking")
