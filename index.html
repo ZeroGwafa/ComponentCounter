@@ -127,14 +127,14 @@
 
     var stamps_used = false;
     function readChatbox() {
-        reader.diffRead = !stamps_used;
+        reader.diffRead = stamps_used;
         reader.readargs = {
             colors: [
 
             ],
             backwards: true
         };
-        var minoverlap 	= 1;
+        var minoverlap 	= 40;
         var new_lines 	= [];
         var opts 		= reader.read() || [];
 
