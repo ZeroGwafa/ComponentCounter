@@ -194,7 +194,7 @@
     $("table").hide();
     $(".common").show();
     $("button").click(function(){
-        if($this).html() == "Start Tracking")
+        if(($this).html() == "Start Tracking")
         {
             var tracking = setInterval(function(){readChatbox();},2000);
             $(this).html("Stop Tracking");
