@@ -157,7 +157,7 @@ function readChatbox() {
 	}
 	for (var a = 0; a < opts.length; a++) {
         if(a == 0)
-            continue;
+            break;
 		// Get the timestamp of the line
 		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
 		if (stamp) stamps_used = true;
@@ -166,12 +166,12 @@ function readChatbox() {
                 console.log(raw);
                 //[1 x Junk]
                 for (var x in raw)
-                    {
-                        console.log(x);
-                        count = raw[x].split(" x ")[0]; //1
-                        mats = raw[x].split(" x ")[1].trim(); //Junk
-                        index = list.indexOf(mats);//Get index of mat based off of list.
-                    }
+                {
+                    console.log(x);
+                    count = raw[x].split(" x ")[0]; //1
+                    mats = raw[x].split(" x ")[1].trim(); //Junk
+                    index = list.indexOf(mats);//Get index of mat based off of list.
+                }
                 list2[index] += Number(count); //add count to index of second list.
                 $("tr:not(:first) > td:nth-child(2)").each(function(e){
                     $(this).text(list2[e]);//update all table rows.
