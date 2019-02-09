@@ -255,6 +255,7 @@ table, tr, td, th
 {
     border: white 1px solid;
     border-collapse: collapse;
+    width:175px;
 }
 table{
     width:245px;
