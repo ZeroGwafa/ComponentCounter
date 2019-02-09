@@ -124,7 +124,6 @@
         list2.fill(0);
 
 var stamps_used = false;
-    var skip = true;
 function readChatbox() {
 	reader.diffRead = !stamps_used;
 	reader.readargs = {
@@ -158,12 +157,6 @@ function readChatbox() {
 		if (old_lines.length > minoverlap) old_lines.splice(0, old_lines.length - minoverlap); 
 		opts = new_lines;
 	}
-    if(skip == true)
-        {
-            skip = false;
-            console.log("Skipping First instance");
-            return 0;
-        }
 	for (var a = 0; a < opts.length; a++) {
 		// Get the timestamp of the line
 		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
@@ -173,6 +166,8 @@ function readChatbox() {
                 //[1 x Junk]
                 for (var x in raw)
                     {
+                        if(x == 0)
+                            continue;
                         var count = raw[x].split(" x ")[0]; //1
                         var mats = raw[x].split(" x ")[1].trim(); //Junk
                         var index = list.indexOf(mats);//Get index of mat based off of list.
