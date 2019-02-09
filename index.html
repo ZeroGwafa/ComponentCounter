@@ -193,11 +193,12 @@
 
     $("table").hide();
     $(".common").show();
+    var tracker;
     $("button.tracker").click(function(){
         if($(this).html() == "Start Tracking")
         {
             console.log("Starting tracker");
-            var tracking = setInterval(function(){readChatbox();},2000);
+            tracking = setInterval(function(){readChatbox();},2000);
             $(this).html("Stop Tracking");
         }
         else
