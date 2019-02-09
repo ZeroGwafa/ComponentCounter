@@ -22,7 +22,7 @@
 	   </div>
 	</div>
 	<div class="curestate" id="overview">
-        <button>Start Tracking</button>
+        <button class="tracker">Start Tracking</button>
 	<table class='common'>
         <tr><th>Components</th><th>Quantity</th></tr>
         <tr><td>Junk</td><td></td></tr>
@@ -193,8 +193,8 @@
 
     $("table").hide();
     $(".common").show();
-    $("button").click(function(){
-        if(($this).html() == "Start Tracking")
+    $("button.tracker").click(function(){
+        if($(this).html() == "Start Tracking")
         {
             var tracking = setInterval(function(){readChatbox();},2000);
             $(this).html("Stop Tracking");
