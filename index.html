@@ -161,6 +161,7 @@ function readChatbox() {
     if(skip == true)
         {
             skip = false;
+            console.log("Skipping First instance");
             return 0;
         }
 	for (var a = 0; a < opts.length; a++) {
@@ -168,7 +169,6 @@ function readChatbox() {
 		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
 		if (stamp) stamps_used = true;
             if (opts[a].text.indexOf("Materials") !== -1) {
-                console.log("Not skipping!");
                 var raw = opts[a].text.split("Materials gained: ")[1].trim().split(",");
                 //[1 x Junk]
                 for (var x in raw)
@@ -182,8 +182,6 @@ function readChatbox() {
 });
                     }
             }
-        console.log("Setting Skip to false");
-        skip = false;
         }
     }
 
