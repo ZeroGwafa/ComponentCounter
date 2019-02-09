@@ -157,7 +157,7 @@ function readChatbox() {
 	}
 	for (var a = 0; a < opts.length; a++) {
         if(a == 0)
-            break;
+            return 0;
 		// Get the timestamp of the line
 		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
 		if (stamp) stamps_used = true;
