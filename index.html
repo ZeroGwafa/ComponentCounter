@@ -124,7 +124,6 @@
         list2.fill(0);
 
 var stamps_used = false;
-var opts 		= reader.read() 		|| [];
 function readChatbox() {
 	reader.diffRead = !stamps_used;
 	reader.readargs = {
@@ -136,7 +135,7 @@ function readChatbox() {
 	};
 	var minoverlap 	= 50;
 	var new_lines 	= [];
-
+	var opts 		= reader.read() 		|| [];
 	
 	// Filter old readings
 	if (stamps_used) {
@@ -179,7 +178,6 @@ function readChatbox() {
                     }
             }
         }
-    var opts 		= reader.read() 		|| [];
     }
 
 
