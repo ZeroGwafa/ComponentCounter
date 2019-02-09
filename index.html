@@ -125,9 +125,9 @@
         list2.length = 75;
         list2.fill(0);
 
-    var stamps_used = true;
+    var stamps_used = false;
     function readChatbox() {
-        reader.diffRead = stamps_used;
+        reader.diffRead = !stamps_used;
         reader.readargs = {
             colors: [
 
