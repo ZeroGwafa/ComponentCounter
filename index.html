@@ -160,19 +160,16 @@ function readChatbox() {
 	}
 	for (var a = 0; a < opts.length; a++) {
 		// Get the timestamp of the line
-		console.log(opts[a].text);
 		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
 		if (stamp) stamps_used = true;
             if (opts[a].text.indexOf("Materials") !== -1 && skip == false) {
-                //console.log(opts[a].text);
+                console.log("Not skipping!");
                 var raw = opts[a].text.split("Materials gained: ")[1].trim().split(",");
                 //[1 x Junk]
                 for (var x in raw)
                     {
                         var count = raw[x].split(" x ")[0]; //1
                         var mats = raw[x].split(" x ")[1].trim(); //Junk
-                        //console.log("Material: " + mats);
-                        //console.log("Count: " + count); 
                         var index = list.indexOf(mats);//Get index of mat based off of list.
                         list2[index] += Number(count); //add count to index of second list.
                         $("tr:not(:first) > td:nth-child(2)").each(function(e){
@@ -180,6 +177,7 @@ function readChatbox() {
 });
                     }
             }
+        console.log("Setting Skip to false");
         skip = false;
         }
     }
