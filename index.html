@@ -92,7 +92,7 @@
         <tr><td>Harnessed components</td><td></td></tr>
         <tr><td>Ilujankan components</td><td></td></tr>
         </table>
-        <table class='rare2'>
+    <table class='rare2'>
         <tr><th>Components</th><th>Quantity</th></tr>
         <tr><td>Knightly components</td><td></td></tr>
         <tr><td>Noxious components</td><td></td></tr>
@@ -115,7 +115,7 @@
 var reader = new ChatBoxReader();
 var old_lines = [];
 var stamps_used = false;
-var list = ["Simple parts", "Magic parts", "Spiritual parts", "Stave parts", "Tensile parts", "Head parts", "Connector parts", "Cover parts", "Organic parts", "Crafted parts", "Plated parts", "Padded parts", "Crystal parts", "Blade parts", "Delicate parts", "Clear parts", "Smooth parts", "Spiked parts", "Deflecting parts", "Base parts", "Metallic parts", "Flexible parts", "Refined components", "Powerful components", "Healthy components", "Stunning components", "Enhancing components", "Evasive components", "Precious components", "Pious components", "Living components", "Ethereal components", "Variable components", "Dextrous components", "Strong components", "Swift components", "Imbued components", "Direct components", "Subtle components", "Light components", "Protective components", "Sharp components", "Heavy components", "Precise components", "Brassican components", "Knightly components", "Dragonfire components", "Fungal components", "Explosive components", "Corporeal components", "Armadyl components", "Bandos components", "Saradomin components", "Seren components", "Zamorak components", "Zaros components", "Resilient components", "Silent components", "Noxious components", "Rumbling components", "Pestiferous components", "Fortunate components", "Ancient components", "Culinary components", "Shifting components", "Harnessed components", "Oceanic components", "Ascended components", "Undead components", "Avernic components", "Shadow components", "Ilujankan components", "Cywir components", "Faceted components", "Clockwork components"]
+var list = ["Base parts", "Blade parts", "Clear parts", "Connector parts", "Cover parts", "Crafted parts", "Crystal parts", "Deflecting parts", "Delicate parts", "Flexible parts", "Head parts", "Magic parts", "Metallic parts", "Organic parts", "Padded parts", "Plated parts", "Simple parts", "Smooth parts", "Spiked parts", "Spiritual parts", "Stave parts", "Tensile parts", "Dextrous components", "Direct components", "Enhancing components", "Ethereal components", "Evasive components", "Healthy components", "Heavy components", "Imbued components", "Light components", "Living components", "Pious components", "Powerful components", "Precious components", "Precise components", "Protective components", "Refined components", "Sharp components", "Strong components", "Stunning components", "Subtle components", "Swift components", "Variable components", "Ancient components", "Armadyl components", "Ascended components", "Avernic components", "Bandos components", "Brassican components", "Clockwork components", "Corporeal components", "Culinary components", "Cywir components", "Dragonfire components", "Explosive components", "Faceted components", "Fortunate components", "Fungal components", "Harnessed components", "Ilujankan components", "Knightly components", "Noxious components", "Oceanic components", "Pestiferous components", "Resilient components", "Rumbling components", "Saradomin components", "Seren components", "Shadow components", "Shifting components", "Silent components", "Undead components", "Zamorak components", "Zaros components"]
 
 
 function readChatbox() {
@@ -158,8 +158,8 @@ function readChatbox() {
 		if (stamp) stamps_used = true;
 		// Instance made
 		if (opts[a].text.indexOf("Materials") !== -1) {
-			var mats = opts[a].text.split("Materials gained: ")[1].split(" x ")[1];
             var count = opts[a].text.split("Materials gained: ")[1].split(" x ")[0];
+            var mats = opts[a].text.split("Materials gained: ")[1].split(" x ")[1];
             
             //$(".curestate").html($(".curestate").html() + opts[a].text +"<br>");
 		}
