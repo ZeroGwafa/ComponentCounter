@@ -123,47 +123,46 @@
         list2.length = 75;
         list2.fill(0);
 
-    var stamps_used = false;
-    function readChatbox() {
-        reader.diffRead = !stamps_used;
-
-        reader.readargs = {
-            colors: [
-
-            ],
-            backwards: true
-        };
-        var minoverlap 	= 40;
-        var new_lines 	= [];
-        var opts 		= reader.read() || [];
-
-        // Filter old readings
-        if (stamps_used) {
-            //console.log('stamps found!');
-            for (var a = 0; a < opts.length; a++) {
-                //console.log("unfiltered: " + opts[a].text);
-                var match = false;
-                for (var i = 0; i < old_lines.length; i++) {
-                    if (reader.matchLines(opts[a].text, old_lines[i].text)) {
-                        match = true;
-                        break;
-                    }
-                }
-                if (!match) {
-                    old_lines.push(opts[a]);
-                    new_lines.push(opts[a]);
-                }
-            }
-            if (old_lines.length > minoverlap) old_lines.splice(0, old_lines.length - minoverlap); 
-            opts = new_lines;
-        }
-        for (a = 0; a < opts.length; a++) {
-            var stamp = opts[0].text.match(/(\d\d:\d\d:\d\d)/);
-            if (stamp)
-                stamps_used = true;
-            else
-                stamps_used = false;
-            
+var stamps_used = false;
+function readChatbox() {
+	reader.diffRead = !stamps_used;
+	reader.readargs = {
+		colors: [
+			[132, 212, 119],
+			[255, 255, 255]
+		],
+		backwards: true
+	};
+	var minoverlap 	= 50;
+	var new_lines 	= [];
+	var opts 		= reader.read() 		|| [];
+	var phase 		= readTelos.readPhase() || readTelos.phase;
+	
+	// Filter old readings
+	if (stamps_used) {
+		//console.log('stamps found!');
+		for (var a = 0; a < opts.length; a++) {
+			//console.log("unfiltered: " + opts[a].text);
+			var match = false;
+			for (var i = 0; i < old_lines.length; i++) {
+				if (reader.matchLines(opts[a].text, old_lines[i].text)) {
+					match = true;
+					break;
+				}
+			}
+			if (!match) {
+				old_lines.push(opts[a]);
+				new_lines.push(opts[a]);
+			}
+		}
+		if (old_lines.length > minoverlap) old_lines.splice(0, old_lines.length - minoverlap); 
+		opts = new_lines;
+	}
+	for (var a = 0; a < opts.length; a++) {
+		// Get the timestamp of the line
+		console.log(opts[a].text);
+		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
+		if (stamp) stamps_used = true;
             if (opts[a].text.indexOf("Materials") !== -1) {
                 //console.log(opts[a].text);
                 var raw = opts[a].text.split("Materials gained: ")[1].trim().split(",");
