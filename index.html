@@ -164,7 +164,7 @@
             // Instance made
             if (opts[a].text.indexOf("Materials") !== -1) {
                 console.log(opts[a].text);
-                var raw = opts[a].split("Materials gained: ")[1].trim().split(",");
+                var raw = opts[a].text.split("Materials gained: ")[1].trim().split(",");
                 //[1 x Junk]
                 for (var x in raw)
                     {
