@@ -168,7 +168,7 @@ function readChatbox() {
         if($(this).html() == "Start Tracking")
         {
             console.log("Starting tracker");
-            tracking = setInterval(function(){readChatbox();},2000);
+            tracking = setInterval(function(){readChatbox();},200);
             $(this).html("Stop Tracking");
         }
         else
