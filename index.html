@@ -22,7 +22,7 @@
 	   </div>
 	</div>
 	<div class="curestate" id="overview">
-        <table>
+        <table class='ui'>
         <tr><td><button class="tracker nisbutton">Start Tracking</button></td><td><button class="clear nisbutton">Clear Data</button></td></tr>
         </table>
         
@@ -166,11 +166,11 @@ function readChatbox() {
     function hide(test)
     {
         $("table").hide();
-        $("."+test.id).show();
+        $(".ui ."+test.id).show();
     }
 
     $("table").hide();
-    $(".common").show();
+    $(".common .ui").show();
     var tracker;
     $("button.tracker").click(function(){
         if($(this).html() == "Start Tracking")
