@@ -263,7 +263,7 @@ td:nth-child(2){
     text-align: center;
 }
 
-td:first, th:first{
+td:nth-child(1), th:nth-child(1){
     width:175px;
 }
 
