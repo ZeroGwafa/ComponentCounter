@@ -23,6 +23,7 @@
 	</div>
 	<div class="curestate" id="overview">
         <button class="tracker nisbutton">Start Tracking</button>
+        <button class="clear nisbutton">Clear Data</button>
 	<table class='common'>
         <tr><th>Components</th><th>Quantity</th></tr>
         <tr><td>Junk</td><td></td></tr>
@@ -127,7 +128,11 @@
 var stamps_used = false;
 function readChatbox() {
 	reader.readargs = {
-		colors: [],
+		colors: [
+            [255,255,255],//Common Mats
+            [255, 128, 0], //Uncommon Mats
+            [255, 0, 0] //Rare Mats
+        ],
 		backwards: true
 	};
 	var new_lines 	= [];
@@ -177,6 +182,12 @@ function readChatbox() {
                 $(this).html("Start Tracking");
                 clearInterval(tracking);
             }
+    });
+    $("button.clear").click(function(){
+        list2.fill(0);
+        $("tr:not(:first) > td:nth-child(2)").each(function(e){
+                    $(this).text(list2[e]);//update all table rows.
+                    });
     });
     
 </script>	
