@@ -116,6 +116,7 @@
 <script>
 
     var reader = new ChatBoxReader();
+        reader.find();
     var old_lines = [];
     var stamps_used = false;
     var list = ["Junk", "Base parts", "Blade parts", "Clear parts", "Connector parts", "Cover parts", "Crafted parts", "Crystal parts", "Deflecting parts", "Delicate parts", "Flexible parts", "Head parts", "Magic parts", "Metallic parts", "Organic parts", "Padded parts", "Plated parts", "Simple parts", "Smooth parts", "Spiked parts", "Spiritual parts", "Stave parts", "Tensile parts", "Dextrous components", "Direct components", "Enhancing components", "Ethereal components", "Evasive components", "Healthy components", "Heavy components", "Imbued components", "Light components", "Living components", "Pious components", "Powerful components", "Precious components", "Precise components", "Protective components", "Refined components", "Sharp components", "Strong components", "Stunning components", "Subtle components", "Swift components", "Variable components", "Ancient components", "Armadyl components", "Ascended components", "Avernic components", "Bandos components", "Brassican components", "Clockwork components", "Corporeal components", "Culinary components", "Cywir components", "Dragonfire components", "Explosive components", "Faceted components", "Fortunate components", "Fungal components", "Harnessed components", "Ilujankan components", "Knightly components", "Noxious components", "Oceanic components", "Pestiferous components", "Resilient components", "Rumbling components", "Saradomin components", "Seren components", "Shadow components", "Shifting components", "Silent components", "Undead components", "Zamorak components", "Zaros components"]
@@ -125,7 +126,6 @@
 
 
     function readChatbox() {
-        reader.find();
         reader.diffRead = !stamps_used;
         reader.readargs = {
             colors: [
