@@ -163,23 +163,21 @@
             if (stamp) stamps_used = true;
             // Instance made
             if (opts[a].text.indexOf("Materials") !== -1) {
-                console.log(opts[a].text);
+                //console.log(opts[a].text);
                 var raw = opts[a].text.split("Materials gained: ")[1].trim().split(",");
                 //[1 x Junk]
                 for (var x in raw)
                     {
                         var count = raw[x].split(" x ")[0]; //1
                         var mats = raw[x].split(" x ")[1].trim(); //Junk
-                        console.log("Material: " + mats);
-                        console.log("Count: " + count); 
-                        var index = list.indexOf(mats);
-                        list2[index] += Number(count);
+                        //console.log("Material: " + mats);
+                        //console.log("Count: " + count); 
+                        var index = list.indexOf(mats);//Get index of mat based off of list.
+                        list2[index] += Number(count); //add count to index of second list.
                         $("tr:not(:first) > td:nth-child(2)").each(function(e){
-    $(this).text(list2[e]);
+    $(this).text(list2[e]);//update all table rows.
 });
                     }
-
-                //$(".curestate").html($(".curestate").html() + opts[a].text +"<br>");
             }
 
         }
