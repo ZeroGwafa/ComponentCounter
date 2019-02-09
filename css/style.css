@@ -255,13 +255,16 @@ table, tr, td, th
 {
     border: white 1px solid;
     border-collapse: collapse;
-    width:175px;
 }
 table{
     width:245px;
 }
 td:nth-child(2){
     text-align: center;
+}
+
+td:first, th:first{
+    width:175px;
 }
 
 @font-face{
