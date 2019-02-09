@@ -158,6 +158,8 @@ function readChatbox() {
 		opts = new_lines;
 	}
 	for (var a = 0; a < opts.length; a++) {
+        if(a == 0)
+            continue;
 		// Get the timestamp of the line
 		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
 		if (stamp) stamps_used = true;
@@ -166,8 +168,6 @@ function readChatbox() {
                 //[1 x Junk]
                 for (var x in raw)
                     {
-                        if(x == "0")
-                            continue;
                         var count = raw[x].split(" x ")[0]; //1
                         var mats = raw[x].split(" x ")[1].trim(); //Junk
                         var index = list.indexOf(mats);//Get index of mat based off of list.
