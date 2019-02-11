@@ -169,7 +169,7 @@ function readChatbox() {
         if($(this).html() == "Start")
         {
             console.log("Starting tracker");
-            tracking = setInterval(function(){readChatbox();},200);
+            tracking = setInterval(function(){readChatbox();},600);
             $(this).html("Stop");
         }
         else
