@@ -127,40 +127,47 @@
         list2.length = 76;
         list2.fill(0);
     var count, mats, index;
+    var chat = new Array();
 
 var stamps_used = false;
 function readChatbox() {
 	reader.readargs = {
 		colors: [
-            [255,255,255],//Common Mats
-            [255, 128, 0], //Uncommon Mats
-            [255, 0, 0] //Rare Mats
+            a1lib.mixcolor(255,255,255),//Common Mats
+            a1lib.mixcolor(255, 128, 0), //Uncommon Mats
+            a1lib.mixcolor(255, 0, 0) //Rare Mats
         ],
 		backwards: true
 	};
 	var new_lines 	= [];
 	var opts 		= reader.read() 		|| [];
 	
-	for (var a = 0; a < opts.length; a++) {
-            if (opts[a].text.indexOf("Materials") !== -1) {
-                var raw = opts[a].text.split("Materials gained: ")[1].trim().split(",");
-                console.log(raw);
-                //[1 x Junk]
-                for (var x in raw)
-                {
-                    console.log(x);
-                    count = raw[x].split(" x ")[0]; //1
-                    mats = raw[x].split(" x ")[1].trim(); //Junk
-                    index = list.indexOf(mats);//Get index of mat based off of list.
-                    list2[index] += Number(count); //add count to index of second list.
-                $("tr:not(:first) > td:nth-child(2)").each(function(e){
-                    $(this).text(list2[e]);//update all table rows.
-                    });
-                }
-                
-            }
+    for(a in opts)
+    {
+        if(opts[a].text.match(/\d\d:\d\d:\d\d/))
+            continue;
+        else
+        {
+            chat.push(opts[a-1].text + " " +  opts[a].text);
         }
     }
+
+	for (a in chat) 
+    {
+        var comps = chat[a].match(/\d+ x \w+( \w+)?/g);
+        for (var x in comps)
+        {
+            console.log(x);
+            count = comps[x].split(" x ")[0]; //1
+            mats = comps[x].split(" x ")[1].trim(); //Junk
+            index = list.indexOf(mats);//Get index of mat based off of list.
+            list2[index] += Number(count); //add count to index of second list.
+        $("tr:not(:first) > td:nth-child(2)").each(function(e){
+            $(this).text(list2[e]);//update all table rows.
+            });
+        }
+    }
+}
 
 
     function hide(test)
