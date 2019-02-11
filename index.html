@@ -127,7 +127,6 @@
         list2.length = 76;
         list2.fill(0);
     var count, mats, index;
-    var chat = new Array();
 
 var stamps_used = false;
 function readChatbox() {
@@ -141,23 +140,17 @@ function readChatbox() {
 	};
 	var new_lines 	= [];
 	var opts 		= reader.read() 		|| [];
-	
+    var chat = "";
+    
     for(a in opts)
     {
-        if(opts[a].text.match(/\d\d:\d\d:\d\d/))
-            continue;
-        else
-        {
-            chat.push(opts[a-1].text + " " +  opts[a].text);
-        }
+        chat += opts[a].text + " ";
     }
-
-	for (a in chat) 
-    {
-        var comps = chat[a].match(/\d+ x \w+( \w+)?/g);
+    
+        var comps = chat.match(/\d+ x \w+( \w+)?/g);
         for (var x in comps)
         {
-            console.log(x);
+            console.log(comps[x]);
             count = comps[x].split(" x ")[0]; //1
             mats = comps[x].split(" x ")[1].trim(); //Junk
             index = list.indexOf(mats);//Get index of mat based off of list.
@@ -166,7 +159,6 @@ function readChatbox() {
             $(this).text(list2[e]);//update all table rows.
             });
         }
-    }
 }
 
 
