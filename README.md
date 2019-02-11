@@ -2,7 +2,7 @@
 
 Install with this link: 
 
-alt1://addapp/https://zerogwafa.github.io/ComponentCounter/appconfig.json
+<a href="alt1://addapp/https://zerogwafa.github.io/ComponentCounter/appconfig.json">LINK</a>
 
 Version 1
 
