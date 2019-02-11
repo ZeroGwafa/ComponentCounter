@@ -24,7 +24,6 @@
         <tr>
             <th><button class="tracker nisbutton">Start</button></th>
             <th><button class="clear nisbutton">Clear</button></th>
-            <th><button class="find nisbutton">Find</button></th>
         </tr>
         </table>
 	</div>
@@ -124,7 +123,6 @@
             ],
             backwards: true
         };
-    var windowCheck = confirm("")
         reader.find();
         var chatCheck = reader.read();
     var old_lines = [];
@@ -139,6 +137,7 @@ function readChatbox() {
 	var new_lines 	= [];
 	var opts 		= reader.read() 		|| [];
     var chat = "";
+    reader.find();
     for(a in opts)
     {
             chat += opts[a].text + " ";
@@ -200,10 +199,6 @@ function readChatbox() {
     }
     list2.fill(0);
     tidyTable();
-    
-    $("button.find").click(function(){
-        reader.find();
-    });
 </script>	
 </body>
 </html>
