@@ -183,11 +183,17 @@ function readChatbox() {
     
     function tidyTable()
     {
+        $("table:contains('parts') tr:not(:first)").hide();
         $("tr:not(:first) > td:nth-child(2)").each(function(e){
                     $(this).text(list2[e]);//update all table rows.
                     });
-        $('tr:contains("0")').hide();
-        $('tr:not(:contains("0"))').show();
+        for(x in list2)
+        {
+            if(list2[x] != 0)
+            {
+		      $("table:contains('parts') tr:not(:first)").eq(x).show();
+            }
+        }
     }
     list2.fill(0);
     tidyTable();
