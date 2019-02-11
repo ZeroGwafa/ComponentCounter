@@ -140,9 +140,11 @@ function readChatbox() {
     reader.find();
     for(a in opts)
     {
+        if(opts[a].text.indexOf("Materials gained") > -1 || opts[a].text.indexOf("Scavenging perk adds") > -1 )
         chat += opts[a].text + " ";
     }
     
+        
         var comps = chat.match(/\d+ x \w+( \w+)?/g);
         for (var x in comps)
         {
