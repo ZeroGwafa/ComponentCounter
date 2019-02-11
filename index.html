@@ -136,7 +136,7 @@ function readChatbox() {
 	var new_lines 	= [];
 	var opts 		= reader.read() 		|| [];
     var chat = "";
-    
+    reader.find();
     for(a in opts)
     {
         chat += opts[a].text + " ";
