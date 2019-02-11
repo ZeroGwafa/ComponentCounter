@@ -1,3 +1,5 @@
+///<reference path="../runeappslib.js"/>
+///<reference path="../alt1lib.js"/>
 "use strict";
 
 
