@@ -175,16 +175,16 @@ function readChatbox() {
     $(".common, .ui").show();
     var tracker;
     $("button.tracker").click(function(){
-        if($(this).html() == "Start Tracking")
+        if($(this).html() == "Start")
         {
             console.log("Starting tracker");
             tracking = setInterval(function(){readChatbox();},200);
-            $(this).html("Stop Tracking");
+            $(this).html("Stop");
         }
         else
             {
                 console.log("Stopping tracker");
-                $(this).html("Start Tracking");
+                $(this).html("Start");
                 clearInterval(tracking);
             }
     });
