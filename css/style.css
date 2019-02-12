@@ -9,6 +9,8 @@ html{
                                   supported by Chrome and Opera */
 }
 
+
+
 .myProgress {
 	width: 100%;
 	background-color: grey;
@@ -20,10 +22,6 @@ html{
 	background-color: green;
 	border-radius: 5px;
 }
-		
-#overview {
-	height: 95%;
-}	
 		
 .header {
 	position:fixed;
@@ -76,18 +74,6 @@ div.header .nisseperator {
 .nisseperator div.contenttab {
 	margin-top:20px;
 }
-
-.curestate{
-	position:fixed;
-	top:40px;
-	left:0px;
-	right:0px;
-	bottom:40px;
-	overflow:auto;
-	padding:20px 10px 5px 10px;
-	z-index:9000;
-}
-
 
 
 .footer {
