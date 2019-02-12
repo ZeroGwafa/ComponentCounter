@@ -1,65 +1,100 @@
 var reader = new ChatBoxReader();
-var old_lines = [];
-var stamps_used = false;
-
-function readChatbox() {
+    reader.readargs = 
+        {
+            colors: [
+                a1lib.mixcolor(255,255,255),//Common Mats
+                a1lib.mixcolor(255, 128, 0), //Uncommon Mats
+                a1lib.mixcolor(255, 165, 0), //Scavenging comps
+                a1lib.mixcolor(255, 0, 0) //Rare Mats
+            ],
+            backwards: true
+        };
     reader.find();
-	reader.diffRead = !stamps_used;
-	reader.readargs = {
-		colors: [
-			[239, 0, 0],
-			[255, 255, 255], 
-            [200, 30, 30]
-		],
-		backwards: true
-	};
-	var minoverlap 	= 50;
-	var new_lines 	= [];
-	var opts 		= reader.read() || [];
 
-	// Filter old readings
-	if (stamps_used) {
-		//console.log('stamps found!');
-		for (var a = 0; a < opts.length; a++) {
-			//console.log("unfiltered: " + opts[a].text);
-			var match = false;
-			for (var i = 0; i < old_lines.length; i++) {
-				if (reader.matchLines(opts[a].text, old_lines[i].text)) {
-					match = true;
-					break;
-				}
-			}
-			if (!match) {
-				old_lines.push(opts[a]);
-				new_lines.push(opts[a]);
-			}
-		}
-		if (old_lines.length > minoverlap) old_lines.splice(0, old_lines.length - minoverlap); 
-		opts = new_lines;
-	}
-	for (a = 0; a < opts.length; a++) {
-		// Get the timestamp of the line
-		//console.log(opts[a].text);
-		var stamp = opts[a].text.match(/(\d\d:\d\d:\d\d)/);
-		if (stamp) stamps_used = true;
-		// Instance made
-		if (opts[a].text.indexOf("Zero Gwafa") !== -1) {
-			$(".curestate").html($(".curestate").html() + opts[a].text +"<br>");
-		}
-		
-	}
-}
+var chatCheck = reader.read();
 
-    $(function(){
-        setTimeout(function(){$(".test").click(function(){readChatBox();});
-    },2000);
-    });
+var list = ["Junk", "Base parts", "Blade parts", "Clear parts", "Connector parts", "Cover parts", "Crafted parts", "Crystal parts", "Deflecting parts", "Delicate parts", "Flexible parts", "Head parts", "Magic parts", "Metallic parts", "Organic parts", "Padded parts", "Plated parts", "Simple parts", "Smooth parts", "Spiked parts", "Spiritual parts", "Stave parts", "Tensile parts", "Dextrous components", "Direct components", "Enhancing components", "Ethereal components", "Evasive components", "Healthy components", "Heavy components", "Imbued components", "Light components", "Living components", "Pious components", "Powerful components", "Precious components", "Precise components", "Protective components", "Refined components", "Sharp components", "Strong components", "Stunning components", "Subtle components", "Swift components", "Variable components", "Ancient components", "Armadyl components", "Ascended components", "Avernic components", "Bandos components", "Brassican components", "Clockwork components", "Corporeal components", "Culinary components", "Cywir components", "Dragonfire components", "Explosive components", "Faceted components", "Fortunate components", "Fungal components", "Harnessed components", "Ilujankan components", "Knightly components", "Noxious components", "Oceanic components", "Pestiferous components", "Resilient components", "Rumbling components", "Saradomin components", "Seren components", "Shadow components", "Shifting components", "Silent components", "Undead components", "Zamorak components", "Zaros components"]
+    
+var list2 = new Array();
+        list2.length = list.length;
+        list2.fill(0);
 
-function start()
+var count, mats, index;
+
+function readChatbox() 
 {
-    setTimeout(function(){
-        setInterval(function(){
-        readChatBox();
-    }, 2000);
-    }, 5000);
+	var opts 		= reader.read() 		|| [];
+    var chat = "";
+    reader.find();
+    
+    for(a in opts)
+    {
+            chat += opts[a].text + " ";
+    }
+    
+        
+    var comps = chat.match(/\d+ x \w+( \w+)?/g);
+    for (var x in comps)
+    {
+        console.log(comps[x]);
+        count = comps[x].split(" x ")[0]; //1
+        mats = comps[x].split(" x ")[1].trim(); //Junk
+        index = list.indexOf(mats);//Get index of mat based off of list.
+        list2[index] += Number(count); //add count to index of second list.
+        tidyTable();
+    }
+}    
+
+$("button.tracker").click(function()
+{
+    if($(this).html() == "Start")
+    {
+        console.log("Starting tracker");
+        tracking = setInterval(function(){readChatbox();},600);
+        $(this).html("Stop");
+    }
+    else
+    {
+        console.log("Stopping tracker");
+        $(this).html("Start");
+        clearInterval(tracking);
+    }
+});
+
+$("button.clear").click(function()
+{
+    list2.fill(0);
+    tidyTable();
+});
+    
+function tidyTable()
+{
+    localStorage.mats = list2;
+    $("table:contains('parts') tr:not(:first)").hide();
+    $("tr:not(:first) > td:nth-child(2)").each(function(e)
+    {
+        $(this).text(list2[e]);//update all table rows.
+    });
+    
+    for(x in list2)
+    {
+        if(list2[x] != 0)
+        {
+          $("table:contains('parts') tr:not(:first)").eq(x).show();
+        }
+    }
 }
+
+
+if(localStorage.mats.length)
+{
+    for(x in localStorage.mats.split(','))
+    {
+        list2[x] = Number(localStorage.mats.split(',')[x]);
+    }
+}
+else
+{
+    list2.fill(0);
+}
+tidyTable();
