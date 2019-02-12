@@ -1,7 +1,9 @@
 # ComponentCounter
 
 Install with this link (Alt1 Required): 
-[Install Link](alt1://addapp/https://zerogwafa.github.io/ComponentCounter/appconfig.json)
+
+alt1://addapp/https://zerogwafa.github.io/ComponentCounter/appconfig.json)
+
 Version 1
 
 Inital release.
