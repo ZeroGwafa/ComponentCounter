@@ -186,7 +186,10 @@ function readChatbox() {
     }
     if(localStorage.mats.length)
         {
-            list2 = localStorage.mats.split(',');
+            for(x in localStorage.mats.split(','))
+            {
+                list2[x] = localStorage.mats.split(',')[x];
+            }
         }
     else
         {
