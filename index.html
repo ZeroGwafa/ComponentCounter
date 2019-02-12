@@ -188,7 +188,7 @@ function readChatbox() {
         {
             for(x in localStorage.mats.split(','))
             {
-                list2[x] = localStorage.mats.split(',')[x];
+                list2[x] = Number(localStorage.mats.split(',')[x]);
             }
         }
     else
