@@ -148,15 +148,7 @@ function readChatbox() {
             list2[index] += Number(count); //add count to index of second list.
             tidyTable();
         }
-}
-
-
-    function hide(test)
-    {
-        $("table").hide();
-        $(".ui, ."+test.id).show();
-    }
-    
+}    
     var tracker;
     $("button.tracker").click(function(){
         if($(this).html() == "Start")
@@ -179,6 +171,7 @@ function readChatbox() {
     
     function tidyTable()
     {
+        localStorage.mats = list2;
         $("table:contains('parts') tr:not(:first)").hide();
         $("tr:not(:first) > td:nth-child(2)").each(function(e){
                     $(this).text(list2[e]);//update all table rows.
@@ -191,7 +184,14 @@ function readChatbox() {
             }
         }
     }
-    list2.fill(0);
+    if(localStorage.mats.length)
+        {
+            list2 = localStorage.mats.split(',');
+        }
+    else
+        {
+            list2.fill(0);
+        }
     tidyTable();
 </script>	
 </body>
