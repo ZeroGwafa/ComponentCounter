@@ -8,7 +8,7 @@ Inital release.
 
 Tracks Invention materials received while dissassembling, spring cleaning, or Scavenging.
 
-Does not keep historical data, meaning if the app window closes, your current data will be lost.
+Keeps data until you hit the "Clear" button.
 
 Instructions:
 1. Open app with RuneScape window visible.
