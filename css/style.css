@@ -9,7 +9,13 @@ html{
                                   supported by Chrome and Opera */
 }
 
-
+.main {
+    position: fixed;
+    top: 47px;
+    overflow-y: scroll;
+    height: 190px;
+    width: 265px;
+}
 
 .myProgress {
 	width: 100%;
