@@ -37,7 +37,7 @@ function readChatbox()
     for (var x in comps)
     {
         console.log(comps[x]);
-        count = comps[x].match("\d+")[0]; //1
+        count = Number(comps[x].match(/\d+/)); //1
         mats = comps[x].match(/[^You receive \d]\w+( \w+)?/)[0]; //Junk
         index = list.indexOf(mats);//Get index of mat based off of list.
         list2[index] += Number(count); //add count to index of second list.
