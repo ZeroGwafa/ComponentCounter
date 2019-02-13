@@ -33,12 +33,12 @@ function readChatbox()
     }
     
     
-    var comps = chat.match(/\d+ x \w+( \w+)? || You receive \d+ x \w+( \w+)?/g);
+    var comps = chat.match(/\d+ x \w+( \w+)? |You receive \d+ \w+( \w+)?/g);
     for (var x in comps)
     {
         console.log(comps[x]);
-        count = comps[x].split(" x ")[0]; //1
-        mats = comps[x].split(" x ")[1].trim(); //Junk
+        count = comps[x].match("\d+")[0]; //1
+        mats = comps[x].match(/[^You receive \d]\w+( \w+)?/)[0]; //Junk
         index = list.indexOf(mats);//Get index of mat based off of list.
         list2[index] += Number(count); //add count to index of second list.
         tidyTable();
