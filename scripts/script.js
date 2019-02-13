@@ -39,7 +39,10 @@ function readChatbox()
         console.log(comps[x]);
         count = Number(comps[x].match(/\d+/)); //1
         mats = comps[x].match(/[^You receive \d]\w+( \w+)?/)[0]; //Junk
-        index = list.indexOf(mats);//Get index of mat based off of list.
+        if(list.indexOf(mats) > -1)
+            index = list.indexOf(mats);//Get index of mat based off of list.
+        else
+            continue;
         list2[index] += Number(count); //add count to index of second list.
         tidyTable();
     }
