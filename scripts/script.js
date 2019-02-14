@@ -80,7 +80,7 @@ $("button.clear").click(function()
 function tidyTable()
 {
     localStorage.mats = list2;
-    $("table:contains('parts') tr:not(:first)").hide();
+    $("table:contains('Comps') tr:not(:first)").hide();
     $("tr:not(:first) > td:nth-child(2)").each(function(e)
     {
         $(this).text(list2[e]);//update all table rows.
