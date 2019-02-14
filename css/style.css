@@ -13,233 +13,14 @@ html{
     position: fixed;
     overflow-y: scroll;
     height: 100vh;
-    width: 265px;
 }
-
-.myProgress {
-	width: 100%;
-	background-color: grey;
-	border-radius: 5px;
-}
-.myBar {
-	width: 0%;
-	height: 20px;
-	background-color: green;
-	border-radius: 5px;
-}
-
-div.headerTitle {
-	position:absolute;
-	width:100%;
-	font-family:rs-pro-3;
-	color:white;
-	vertical-align:middle;
-	font-size:16px;
-	line-height:40px;
-	text-align:center;
-
-}
-div.headerTitle:before {
-	position:absolute;
-	top:0px;
-	left:-25px;
-	width:25px;
-	height:24px;
-
-}
-div.headerTitle:after {
-	position:absolute;
-	top:0px;
-	right:-25px;
-	width:25px;
-	height:24px;
-}
-.nisbutton{height:32px; position:relative; background:url('/nis/alt1-currentskin/nisbutton.png') 0px -100% / 20px 400% repeat content-box; cursor:pointer; text-align:center; color:#000; font-family:'trajan-pro-3'; text-shadow:1px 1px 2px #ECC622; font-size:18px; margin:5px; padding:0px 12px; line-height:32px; user-select:none; -webkit-user-select:none;}
-div.header .nisseperator {
-	bottom:0px;
-	left:0px;
-	right:0px;
-	display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  	z-index:9400;
-	
-}
-.nisseperator div.contenttab {
-	margin-top:20px;
-}
-
-
-.footer {
-	position:fixed;
-	bottom:0px;
-	left:0px;
-	right:0px;
-	height:40px;
-	background: url('/nis/alt1-currentskin/background.png') #171E24;
-	z-index:10000;
-}
-.footer:before {
-	position:absolute;
-	content:'';
-	top:-2px;
-	left:0px;
-	right:0px;
-	height:0px;
-	border-top: 1px solid #000;
-    border-bottom: 1px solid #41555F;
-    z-index:10001;
-	
-}
-
-
-.chatopt {
-	border-radius: 3px;
-	background: rgba(255,255,255,0.2);
-	text-align: center;
-	margin: 3px 10px;
-}
-.chatopt.selected {
-	outline: 1px solid;
-	outline-color: var(--nis-col-std);
-}
-#output {
-	padding: 5px 10px;
-}
-#solvepaste {
-	font-size: 22px;
-	line-height: 40px;
-	color: var(--nis-col-std);
-	display: none;
-	text-align: center;
-	white-space: nowrap;
-}
-#solvepaste.blur {
-	color: var(--nis-col-faded);
-}
-.crty-header {
-	background: linear-gradient(to left,transparent,rgba(0,255,255,0.15),transparent);
-    font-size: 20px;
-    text-align: center;
-    font-family: serif;}
-.crty-story {
-	display: block;
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-}
-a {
-	cursor: pointer;
-	color: #CBCFD2;
-}
-a.alert {
-	display:block;
-	width: 100%;
-    box-shadow: 0px 0px 5px #FFF inset;
-    padding:5px;
-    box-sizing: border-box;
-    font-size: 12px;
-    margin: 4px;
-    border-radius: 3px;
-    background: radial-gradient(rgba(0,0, 0, 0),rgba(230, 230, 255, 0.1));
-    text-decoration:none;
-
-    
-}
-.updatehead {
-	border-bottom: 1px solid #999;
-    margin-bottom:3px;
-}
-.update {
-    padding-bottom:10px;
-}
-.updatetitle {
-    font-size: 20px;
-    font-weight: bold;
-}
-.updateversion {
-    margin-left: 10px;
-}
-.updatetime {
-    margin-left: 10px;
-}
-.listtitle {
-    font-weight: bold;
-    font-size: larger;
-    margin-bottom: 4px;
-    font-family: serif;
-
-}
-.list {
-    margin-top: 2px;
-}
-
-
-.borderImage {
-	position:relative;
-	border-top: 1px solid #e36000;
-	border-bottom: 1px solid #913200;
-}
-.borderImage:hover {
-	border-top: 1px solid #f89100;
-	border-bottom: 1px solid #f74e00;
-}
-.borderImage:before, .borderImage:after, .options .option:before, .options .option:after {
-	content: "";
-    position: absolute;
-    background-image: linear-gradient(#e36000, #913200);
-    top: -1px;
-    bottom: -1px;
-    width: 1px;
-}
-.borderImage:hover:before, .borderImage:hover:after, .borderImage:hover .options .option:before, .borderImage:hover .options .option:after {
-  background-image: linear-gradient(#f89100, #f74e00);
-}
-.borderImage:before {
-	left: 0px;
-	z-index: 9700;
-}
-.borderImage:after {
-	right: 0px;
-}
-
-.options .option {
-	border:1px black solid;
-    padding:5px;
-    margin:0 1px 0 1px;
-    position:relative;
-
-}
-.options .option:before {
-	left:-2px;
-}
-.options .option:after {
-	right:-2px;
-}
-.option label {
-    position: relative;
-}
-.option input[type=radio], .option input[type=checkbox] {
-	display:none; 
-} /* to hide the checkbox itself */
-.option input[type=radio] + label:before { letter-spacing: 9px; } /* space between checkbox and label */
-
-.option input[type=radio]:checked + label:before { letter-spacing: 9px; } /* allow space for check mark */
-
-.option input[type=checkbox] + label:before { letter-spacing: 0px; } /* space between checkbox and label */
-
-.option input[type=checkbox]:checked + label:before { letter-spacing: 0px; } /* allow space for check mark */
 
 table, tr, td, th
 {
     border: white 1px solid;
     border-collapse: collapse;
 }
-table{
-    width:245px;
-}
+
 td:nth-child(2){
     text-align: center;
 }
@@ -247,6 +28,9 @@ td:nth-child(2){
 td:nth-child(1), th:nth-child(1){
     width:175px;
 }
+
+.nisbutton{height:32px; position:relative; background:url('/nis/alt1-currentskin/nisbutton.png') 0px -100% / 20px 400% repeat content-box; cursor:pointer; text-align:center; color:#000; font-family:'trajan-pro-3'; text-shadow:1px 1px 2px #ECC622; font-size:18px; margin:5px; padding:0px 12px; line-height:32px; user-select:none; -webkit-user-select:none;}
+
 
 @font-face{
 	font-family:'rs-pro-3';
