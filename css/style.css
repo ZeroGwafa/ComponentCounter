@@ -18,6 +18,7 @@ html{
 
 table, tr, td, th
 {
+    width: 100vw;
     text-align: center;
     border: white 1px solid;
     border-collapse: collapse;
