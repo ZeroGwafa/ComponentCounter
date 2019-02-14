@@ -13,6 +13,7 @@ html{
     position: fixed;
     overflow-y: scroll;
     height: 100vh;
+    width:100hv;
 }
 
 table, tr, td, th
@@ -24,10 +25,6 @@ table, tr, td, th
 
 td:nth-child(2){
     text-align: center;
-}
-
-td:nth-child(1), th:nth-child(1){
-    width:175px;
 }
 
 .nisbutton{
