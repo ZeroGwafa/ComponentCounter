@@ -13,7 +13,7 @@ html{
     position: fixed;
     top: 47px;
     overflow-y: scroll;
-    height: 190px;
+    height: 90vh;
     width: 265px;
 }
 
@@ -28,17 +28,7 @@ html{
 	background-color: green;
 	border-radius: 5px;
 }
-		
-.header {
-	position:fixed;
-	top:2px;
-	left:0px;
-	right:0px;
-	height:0px;
-	height:20px;
-	background: url('/nis/alt1-currentskin/background.png') #171E24;
-	z-index:10000;
-}
+
 div.headerTitle {
 	position:absolute;
 	width:100%;
