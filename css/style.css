@@ -30,7 +30,22 @@ td:nth-child(1), th:nth-child(1){
     width:175px;
 }
 
-.nisbutton{height:32px; position:relative; background:url('/nis/alt1-currentskin/nisbutton.png') 0px -100% / 20px 400% repeat content-box; cursor:pointer; text-align:center; color:#000; font-family:'trajan-pro-3'; text-shadow:1px 1px 2px #ECC622; font-size:18px; margin:5px; padding:0px 12px; line-height:32px; user-select:none; -webkit-user-select:none;}
+.nisbutton{
+    height:32px; 
+    position:relative; 
+    background:url('/nis/alt1-currentskin/nisbutton.png') 0px -100% / 20px 400% repeat content-box; 
+    cursor:pointer; 
+    text-align:center; 
+    color:#000; 
+    font-family:'trajan-pro-3'; 
+    text-shadow:1px 1px 2px #ECC622; 
+    font-size:12px; 
+    margin:5px; 
+    padding:0px 12px; 
+    line-height:32px; 
+    user-select:none; 
+    -webkit-user-select:none;
+}
 
 
 @font-face{
