@@ -11,9 +11,8 @@ html{
 
 .main {
     position: fixed;
-    top: 47px;
     overflow-y: scroll;
-    height: 90vh;
+    height: 100vh;
     width: 265px;
 }
 
