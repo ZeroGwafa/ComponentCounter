@@ -17,6 +17,7 @@ html{
 
 table, tr, td, th
 {
+    text-align: center;
     border: white 1px solid;
     border-collapse: collapse;
 }
