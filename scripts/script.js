@@ -69,7 +69,7 @@ $("button.tracker").click(function()
         $(this).html("Start");
         clearInterval(tracking);
     }
-});
+}).click();
 
 $("button.clear").click(function()
 {
