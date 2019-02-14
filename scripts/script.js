@@ -90,7 +90,7 @@ function tidyTable()
     {
         if(list2[x] != 0)
         {
-          $("table:contains('parts') tr:not(:first)").eq(x).show();
+          $("table:contains('Comps') tr:not(:first)").eq(x).show();
         }
     }
 }
