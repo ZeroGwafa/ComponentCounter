@@ -51,7 +51,7 @@ function readChatbox()
         else
             continue;
         list2[index] += Number(count); //add count to index of second list.
-        tidyTable();
+        tidyTable(index);
     }
 }    
 
@@ -77,7 +77,7 @@ $("button.clear").click(function()
     tidyTable();
 });
     
-function tidyTable()
+function tidyTable(index)
 {
     localStorage.mats = list2;
     $("table:contains('Comps') tr:not(:first)").hide();
@@ -93,6 +93,8 @@ function tidyTable()
           $("table:contains('Comps') tr:not(:first)").eq(x).show();
         }
     }
+    $("table:contains('Comps') tr:not(:first)").eq(index).css({"background-color":"lime"}).animate({
+    backgroundColor:$.Color( "rgba(0, 0, 0, 0)")},500, function(){$(this).removeAttr("style")});
 }
 
 
