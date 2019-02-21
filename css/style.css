@@ -9,6 +9,10 @@ html{
                                   supported by Chrome and Opera */
 }
 
+body{
+	padding-top: 10px;
+}
+
 .main {
     position: fixed;
     overflow-y: scroll;
