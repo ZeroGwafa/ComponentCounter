@@ -9,6 +9,18 @@ html{
                                   supported by Chrome and Opera */
 }
 
+.rare{
+	font-weight: bold;
+	color:#FF0000;
+}
+
+.uncommon{
+	color:#FF8000;
+}
+
+.common{
+	
+}
 body{
 	padding-top: 10px;
 }
@@ -30,6 +42,11 @@ table, tr, td, th
 td:nth-child(2){
     text-align: center;
 }
+
+.rare{
+	font-weight:bold;
+}
+
 
 .nisbutton{
     height:32px; 
