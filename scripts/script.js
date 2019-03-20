@@ -98,7 +98,7 @@ function tidyTable(index)
 }
 
 
-if(localStorage.mats.length)
+if(localStorage.mats.length > 0)
 {
     for(x in localStorage.mats.split(','))
     {
