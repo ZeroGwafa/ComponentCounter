@@ -1,5 +1,5 @@
 {
-	"appName": "Material Tracker",
+	"appName": "ComponentCounter",
 	"description": "Tracks materials as they appear in the chat box.",
 	"appUrl":"https://zerogwafa.github.io/ComponentCounter",
 	"configUrl":"https://zerogwafa.github.io/ComponentCounter/appconfig.json",
