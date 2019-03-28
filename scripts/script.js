@@ -98,7 +98,7 @@ function tidyTable(index)
 }
 
 
-if(!localStorage.getItem("mats") == null)
+if(localStorage.getItem("mats") != null)
 {
     for(x in localStorage.mats.split(','))
     {
