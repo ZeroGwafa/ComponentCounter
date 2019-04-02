@@ -121,11 +121,11 @@ $(".edit").change(function()
             $(".tracker").click();
         }
         $("tr:hidden").show();
-        $("table:last tr").find("td:last").prop('contenteditable','true');
+        $("table:last tr").find("td:last").attr('contenteditable','true').focus(function(){$(this).select();});
     }
     else
     {
-        $("table:last tr td").removeProp('contentEditable');
+        $("table:last tr td").removeAttr('contenteditable');
         list2 = [];
         $("table:last tr").find("td:last").each(function(){list2.push(parseInt($(this).text()) || 0)})
         tidyTable();
