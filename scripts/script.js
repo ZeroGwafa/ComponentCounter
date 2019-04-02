@@ -110,3 +110,24 @@ else
     list2.fill(0);
 }
 tidyTable();
+
+
+$(".edit").change(function()
+{
+    if($(this).is(':checked'))
+    {
+        if($(".tracker").text() == "Stop")
+        {
+            $(".tracker").click();
+        }
+        $("tr:hidden").show();
+        $("table:last tr").find("td:last").prop('contenteditable','true');
+    }
+    else
+    {
+        $("table:last tr td").removeProp('contentEditable');
+        list2 = [];
+        $("table:last tr").find("td:last").each(function(){list2.push(parseInt($(this).text()) || 0)})
+        tidyTable();
+    }
+});
