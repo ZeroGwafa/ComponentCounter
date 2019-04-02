@@ -121,7 +121,7 @@ $(".edit").change(function()
             $(".tracker").click();
         }
         $("tr:hidden").show();
-        $("table:last tr").find("td:last").attr('contenteditable','true').focus(function(){$(this).select();});
+        $("table:last tr").find("td:last").attr('contenteditable','true').focus(function(){document.execCommand('selectAll',false,null)}});
     }
     else
     {
