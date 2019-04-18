@@ -296,8 +296,3 @@ ChatBoxReader.getFontColor = function (buffer, x, y, w, h) {
 	}
 	return buffer.getPixel(bestx, besty);
 }
-
-
-
-
-
