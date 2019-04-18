@@ -60,7 +60,7 @@ function ChatBoxReader() {
 		var t = Date.now();
 		if (!me.pos) { return null; }
 		var box = me.pos.mainbox;
-		if (!img) { img = a1lib.bindregion(box.rect.x + (box.leftfound ? 0 : -300), box.rect.y, box.rect.width, box.rect.height); }
+		if (!img) { img = a1lib.bindregion(box.rect.x + (box.leftfound ? 0 : -300), box.rect.y, box.rect.width+(box.leftfound ? 0 : 300), box.rect.height); }
 		if (!img) { return null; }
 
 		//add timestamp colors if needed
