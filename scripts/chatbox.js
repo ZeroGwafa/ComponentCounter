@@ -11,7 +11,7 @@ ImageData.fromBase64(i => ChatBoxReader.chatbubble = i, "iVBORw0KGgoAAAANSUhEUgA
 ImageData.fromBase64(i => ChatBoxReader.chatLegacyBorder = i, "iVBORw0KGgoAAAANSUhEUgAAAAQAAAAPCAIAAABMVPnqAAAAIUlEQVQYV2P4jwRAnNk92RA0mDjzJuRCOUAWlAMF//8DAJmOfBu3Ydq7AAAAAElFTkSuQmCC");
 ImageData.fromBase64(i => ChatBoxReader.entertochat = i, "iVBORw0KGgoAAAANSUhEUgAAABgAAAAJCAYAAAAo/ezGAAAAdElEQVQ4T62RSw7AIAhEOQTH8WCsXbvmuhRsTdQipqYmz88MJI4CM0tDB/zNPelipJT06Bee4oo9UbqV1+uDscLS5Zx163ulFN2OOiLWVxnEE1YpGq74FSISu/GsGy/hhDBBixgVecw9YYL6GQ+9uWPfI3ABK/Blt6d3IYgAAAAASUVORK5CYII=");
 ImageData.fromBase64(i => ChatBoxReader.gameoff = i, "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAdUlEQVQ4T62MsQrAIAxE/bwOhS7tkMHBLi79/zVthAvaCjZq4MFx5J6jePEI8wTPOQsq2M/YJcAuBQHlH/LfuQILVQFyi0Kw+cCClMgt8t9CYEEFK3kVINfAEKBPI0FK5BoYAvSFwIIKloNYeD+0+Ah6GRQQ30BWZJSYN2VIAAAAAElFTkSuQmCC");
-ImageData.fromBase64(i => ChatBoxReader.gamefilter = i, "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAqUlEQVQ4T63MsQrCQBAE0P1LSzs7Sy3tBEvtFDFNwMYurVhY2lgKfkHyBXbJ6AQm3AnHcaeBB3ubnbGiaVE0XZZD3cI2jxd+MRR8Pkvxv4LVrQa5yxjeKucVaI7xChaXJ4jLFMp5BZpjvIJ5dQdxqTnGvbXZ6QriMoVyNi3PIC41E3+6bwVFe69gsq8QoqAMBaGDGOVsvD5mFzDbF7jUHPJ9b6PlDvm2eAMxAQErxoTm+QAAAABJRU5ErkJggg==");
+ImageData.fromBase64(i => ChatBoxReader.gamefilter = i, "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAvklEQVQ4T62OoQ7CQBBE9y+ROBwSJI4ECZIQMCQYXC1BIDFIEr6gfAGOXXY22WaPQC9XmOTletOZaQna3JkVKWVdP4UW14f8QjNgv1Ig7fB/BmbnWkA0cyCrHbZeHHAzRzIwOd4EwCyRdth6ccDNHMnAuLoIgKkn+72NmKXR/iQAZom0w9Ybbg8CYOrJfsdLfwbWClLPssnAYFWxIp+wVlAz8C2Qk3bsY9Sf7zoPoGsDEYy18Z6n3nQpXSEiegF+r+4Tq4ExQgAAAABJRU5ErkJggg==");
 ImageData.fromBase64(i => ChatBoxReader.gameall = i, "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAo0lEQVQ4T6XMsQkCQRAF0KnA5DA0MDG3A2uwlQuN7cVY07vgAkPBTA3FAixA5esXvuyeC+O6Cw+Gv/PH7oc5Hsf/sGupjxx2289Ar2c51LNrNwX1FzzqRQc0e6ID580YxFCzJ9y1y3oIYphDPTutBiCGmj3hbvmB3XICYphDveiA5hQVRfnXge1i9KY8/A9p7zP0FzzqlR9o6wolrEmEv2rqCk/yGcSB9N78JQAAAABJRU5ErkJggg==");
 ImageData.fromBase64(i => ChatBoxReader.legacyreport = i, "iVBORw0KGgoAAAANSUhEUgAAACEAAAALCAYAAADx0+Q/AAAAlElEQVQ4T72OCQ4AIQgD/f+nXYuUgGLiukeTQVq8Sp2F7FdQWi2GKmz6CEh6Mfq4DQf/FfaO1EFt1ocKRX+SQ35lD/ErPcOafICfgp7kEGe9tF6gwYKiK/GaLrjbOx/mwSiQ9Ty8uuCgJ5YFo0zeKc0W+30+3kkgmYyXpJ5oZt5lRpZn+4DszQYbpI+fkoY7vPeJWi767hYjK0Ud6gAAAABJRU5ErkJggg==");
 ImageData.fromBase64(i => ChatBoxReader.reportbutton = i, "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAQCAYAAADJViUEAAABAElEQVQ4T6WSvwtBURTHj0V+FknyB6AMZCH8ATbxByijwb9gsFsMBrvJaFAGu00sJilltlp0+N7Xua7rySuvPr1z7z2f77m9Ht0PdQbPR9cm2P8G3TZlBli4yUCabd5kqUG/W+FmI+8aJtB1lWUAWWrIvXaSS8WsCpHA9cg5E1xlQQJOi5y6RToVVQHST8d5nAEWUguXpSNDAoOOswc+5P0sxgL2MNkUzV4lo3E7DaoNvAWIkbCfC5moYtIL6OCfcqsWUqDGVATZAVqwZbAeJ/QbVyfy8WyYesnm5G+gBwG4gUwG+iPZgs3OkATPshuEHwDYB16g86LKwD7wwh8y0wNntoLFjD8QsQAAAABJRU5ErkJggg==");
@@ -85,7 +85,12 @@ function ChatBoxReader() {
 				break;
 			}
 
-			var str = jsonDecode(alt1.bindReadStringEx(img.handle, imgline0x, imgliney, jsonEncode(this.readargs)));
+			var str = null;
+			//fix issue where first read might be on long breaks between characters
+			for (var wiggle = 0; wiggle <= 1; wiggle++) {
+				str = jsonDecode(alt1.bindReadStringEx(img.handle, imgline0x + wiggle * 10, imgliney, jsonEncode(this.readargs)));
+				if (str != null) { break; }
+			}
 			//retry with offset if timestamps are enabled
 			if (!str && box.timestamp) { str = jsonDecode(alt1.bindReadStringEx(img.handle, imgline0x + ChatBoxReader.timestampOffset, imgliney, jsonEncode(this.readargs))); }
 			readlines.unshift(str ? str : { text: "", fragments: [] });
@@ -229,9 +234,9 @@ function ChatBoxReader() {
 
 			if (!group.leftfound && group.topright.type == "full") {
 				var pos = [];
-				if (pos.length == 0) { pos = a1lib.findsubimg(img, ChatBoxReader.gameall, null, group.rect.x - 300, group.rect.y - 22, 310, 16); }
-				if (pos.length == 0) { pos = a1lib.findsubimg(img, ChatBoxReader.gamefilter, null, group.rect.x - 300, group.rect.y - 22, 310, 16); }
-				if (pos.length == 0) { pos = a1lib.findsubimg(img, ChatBoxReader.gameoff, null, group.rect.x - 300, group.rect.y - 22, 310, 16); }
+				if (pos.length == 0) { pos = a1lib.findsubimg(img, ChatBoxReader.gameall, null, Math.max(0, group.rect.x - 300), group.rect.y - 22, 310, 16); }
+				if (pos.length == 0) { pos = a1lib.findsubimg(img, ChatBoxReader.gamefilter, null, Math.max(0, group.rect.x - 300), group.rect.y - 22, 310, 16); }
+				if (pos.length == 0) { pos = a1lib.findsubimg(img, ChatBoxReader.gameoff, null, Math.max(0, group.rect.x - 300), group.rect.y - 22, 310, 16); }
 				if (pos.length != 0) {
 					group.leftfound = true;
 					var d = group.rect.x - pos[0].x;
@@ -296,3 +301,8 @@ ChatBoxReader.getFontColor = function (buffer, x, y, w, h) {
 	}
 	return buffer.getPixel(bestx, besty);
 }
+
+
+
+
+
