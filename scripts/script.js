@@ -112,13 +112,24 @@ else
 }
 
 $(".header tr th:last").after("<input type='checkbox' class='sAll' style='display:none'></input>");
-$('.sAll').change(function(){$('.hide').prop("checked","true");});
+$('.sAll').change(function()
+{
+    if($(this).prop("checked"))
+    {
+        $('.hide').prop("checked",true);
+    }
+    else
+    {
+        $('.hide').prop("checked",false);
+    }
+});
+
 $(".rare tr,.uncommon tr,.common tr").find("td:last").each(function(){
 $(this).after("<input type='checkbox' class='hide' style='display:none'></input>")
 });
 tidyTable();
-
-
+$(".rare tr,.uncommon tr,.common tr").find("td:last").each(function(){
+$(this).after("<input type='checkbox' class='hide' style='display:none'></input>")
 $(".edit").change(function()
 {
     $(".hide, .sAll").toggle();
