@@ -95,7 +95,11 @@ function tidyTable(index)
     }
     $("table:contains('Comps') tr:not(:first)").eq(index).css({"background-color":"lime"}).animate({
     backgroundColor:$.Color( "rgba(0, 0, 0, 0)")},500, function(){$(this).removeAttr("style")});
-    $(".rare tr input.hide, .uncommon tr input.hide, .common tr input.hide").each(function(){if($(this).prop("checked") == true){$(this).parent().show()}else{$(this).parent().hide()}});
+
+    if($(".hide").each(function(){if($(this).prop("checked"))return true;}))
+    {
+        $(".rare tr input.hide, .uncommon tr input.hide, .common tr input.hide").each(function(){if($(this).prop("checked") == true){$(this).parent().show()}else{$(this).parent().hide()}});    
+    }
 }
 
 
