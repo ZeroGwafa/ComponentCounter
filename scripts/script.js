@@ -111,6 +111,8 @@ else
     list2.fill(0);
 }
 
+$(".header tr").after("<input type='checkbox' class='sAll' style='display:none'></input>");
+$('.sAll').change(function(){$('.hide').prop("checked","true");});
 $(".rare tr,.uncommon tr,.common tr").find("td:last").each(function(){
 $(this).after("<input type='checkbox' class='hide' style='display:none'></input>")
 });
