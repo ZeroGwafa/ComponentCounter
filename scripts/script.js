@@ -121,7 +121,7 @@ tidyTable();
 
 $(".edit").change(function()
 {
-    $(".hide").toggle();
+    $(".hide, .sAll").toggle();
     if($(this).is(':checked'))
     {
         if($(".tracker").text() == "Stop")
