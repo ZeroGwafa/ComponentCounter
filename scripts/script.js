@@ -95,6 +95,7 @@ function tidyTable(index)
     }
     $("table:contains('Comps') tr:not(:first)").eq(index).css({"background-color":"lime"}).animate({
     backgroundColor:$.Color( "rgba(0, 0, 0, 0)")},500, function(){$(this).removeAttr("style")});
+    $(".rare tr input.hide, .uncommon tr input.hide, .common tr input.hide").each(function(){if($(this).prop("checked") == true){$(this).parent().show()}else{$(this).parent().hide()}});
 }
 
 
@@ -109,11 +110,16 @@ else
 {
     list2.fill(0);
 }
+
+$(".rare tr,.uncommon tr,.common tr").find("td:last").each(function(){
+$(this).after("<input type='checkbox' class='hide' style='display:none'></input>")
+});
 tidyTable();
 
 
 $(".edit").change(function()
 {
+    $(".hide").toggle();
     if($(this).is(':checked'))
     {
         if($(".tracker").text() == "Stop")
