@@ -128,8 +128,10 @@ $(".rare tr,.uncommon tr,.common tr").find("td:last").each(function(){
 $(this).after("<input type='checkbox' class='hide' style='display:none'></input>")
 });
 tidyTable();
-$(".rare tr,.uncommon tr,.common tr").find("td:last").each(function(){
-$(this).after("<input type='checkbox' class='hide' style='display:none'></input>")
+$(".rare tr,.uncommon tr,.common tr").find("td:last").each(function()
+{
+    $(this).after("<input type='checkbox' class='hide' style='display:none'></input>");
+});
 $(".edit").change(function()
 {
     $(".hide, .sAll").toggle();
