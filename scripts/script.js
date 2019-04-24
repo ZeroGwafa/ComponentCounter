@@ -95,11 +95,6 @@ function tidyTable(index)
     }
     $("table:contains('Comps') tr:not(:first)").eq(index).css({"background-color":"lime"}).animate({
     backgroundColor:$.Color( "rgba(0, 0, 0, 0)")},500, function(){$(this).removeAttr("style")});
-
-    if($(".hide").each(function(){if($(this).prop("checked"))return true;}))
-    {
-        $(".rare tr input.hide, .uncommon tr input.hide, .common tr input.hide").each(function(){if($(this).prop("checked") == true){$(this).parent().show()}else{$(this).parent().hide()}});    
-    }
 }
 
 
@@ -114,30 +109,10 @@ else
 {
     list2.fill(0);
 }
-
-$(".header tr th:last").after("<input type='checkbox' class='sAll' style='display:none'></input>");
-$('.sAll').change(function()
-{
-    if($(this).prop("checked"))
-    {
-        $('.hide').prop("checked",true);
-    }
-    else
-    {
-        $('.hide').prop("checked",false);
-    }
-});
-
-$(".rare tr,.uncommon tr,.common tr").find("td:last").each(function()
-{
-    $(this).after("<input type='checkbox' class='hide' style='display:none'></input>");
-});
-
 tidyTable();
 
 $(".edit").change(function()
 {
-    $(".hide, .sAll").toggle();
     if($(this).is(':checked'))
     {
         if($(".tracker").text() == "Stop")
