@@ -98,7 +98,6 @@ function tidyTable(index)
 
     if($(".hide").each(function(){if($(this).prop("checked"))return true;}))
     {
-        console.warn("Found checked box, hiding others");
         $(".rare tr input.hide, .uncommon tr input.hide, .common tr input.hide").each(function(){if($(this).prop("checked") == true){$(this).parent().show()}else{$(this).parent().hide()}});    
     }
 }
