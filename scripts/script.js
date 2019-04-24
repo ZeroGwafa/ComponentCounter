@@ -95,15 +95,12 @@ function tidyTable(index)
     }
     $("table:contains('Comps') tr:not(:first)").eq(index).css({"background-color":"lime"}).animate({
     backgroundColor:$.Color( "rgba(0, 0, 0, 0)")},500, function(){$(this).removeAttr("style")});
-<<<<<<< HEAD
 
     if($(".hide").each(function(){if($(this).prop("checked"))return true;}))
     {
         console.warn("Found checked box, hiding others");
         $(".rare tr input.hide, .uncommon tr input.hide, .common tr input.hide").each(function(){if($(this).prop("checked") == true){$(this).parent().show()}else{$(this).parent().hide()}});    
     }
-=======
->>>>>>> parent of 94b6aa5... Update script.js
 }
 
 
@@ -118,7 +115,6 @@ else
 {
     list2.fill(0);
 }
-<<<<<<< HEAD
 
 $(".header tr th:last").after("<input type='checkbox' class='sAll' style='display:none'></input>");
 $('.sAll').change(function()
@@ -137,18 +133,12 @@ $(".rare tr,.uncommon tr,.common tr").find("td:last").each(function()
 {
     $(this).after("<input type='checkbox' class='hide' style='display:none'></input>");
 });
-=======
-tidyTable();
->>>>>>> parent of 94b6aa5... Update script.js
 
 tidyTable();
 
 $(".edit").change(function()
 {
-<<<<<<< HEAD
     $(".hide, .sAll").toggle();
-=======
->>>>>>> parent of 94b6aa5... Update script.js
     if($(this).is(':checked'))
     {
         if($(".tracker").text() == "Stop")
