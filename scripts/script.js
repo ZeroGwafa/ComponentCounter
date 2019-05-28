@@ -20,6 +20,7 @@ var list2 = new Array();
         list2.fill(0);
 
 var count, mats, index;
+var actions = 0;
 
 function readChatbox() 
 {
@@ -34,6 +35,9 @@ function readChatbox()
     
     
     var comps = chat.match(/\d+ x \w+( \w+)?[^\d+:]|You receive \d+ \w+( \w+)?[^\d+:]/g);
+	console.log(comps);
+	if(comps != null && comps.length > -1)
+		actions++;
     for (var x in comps)
     {
         console.log(comps[x]);
@@ -74,6 +78,7 @@ $("button.tracker").click(function()
 $("button.clear").click(function()
 {
     list2.fill(0);
+	actions = 0;
     tidyTable();
 });
     
@@ -95,6 +100,7 @@ function tidyTable(index)
     }
     $("table:contains('Comps') tr:not(:first)").eq(index).css({"background-color":"lime"}).animate({
     backgroundColor:$.Color( "rgba(0, 0, 0, 0)")},500, function(){$(this).removeAttr("style")});
+	$(".actions").text(actions);
 }
 
 
