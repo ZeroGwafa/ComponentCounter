@@ -1,119 +1,357 @@
 <html>
+
 <head>
-	<link rel="stylesheet" type="text/css" href="css/nis.css"/>
-	<link rel="stylesheet" type="text/css" href="css/style.css" >
+    <link rel="stylesheet" type="text/css" href="css/nis.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script type="text/javascript" src="/ComponentCounter/scripts/runeappslib.js"></script>
     <script type="text/javascript" src="/ComponentCounter/scripts/jquery.js"></script>
     <script type="text/javascript" src="/ComponentCounter/scripts/alt1lib.js"></script>
     <script type="text/javascript" src="/ComponentCounter/scripts/imagedetect.js"></script>
-	<script type="text/javascript" src="/ComponentCounter/scripts/chatbox.js"></script>	
+    <script type="text/javascript" src="/ComponentCounter/scripts/chatbox.js"></script>
     <script type="text/javascript" src="/ComponentCounter/scripts/jquery-color.js"></script>
 </head>
+
 <body class="nis">
-	<div class="main">        
-    <table class="ui">
-    <tbody>
-        <tr>
-        	<th><button class="tracker nisbutton">Start</button></th>
-        	<th><button class="clear nisbutton">Clear</button></th>
-    	</tr>
-        <tr>
-        	<th>Edit Mode:</th>
-        	<th><input type="checkbox" class="edit"></th>
-        </tr>
-		<tr><th>Actions</th><th><span class='actions'></span></th>
-		</tr>
-    </tbody></table>
-	<table>
-        <tbody class='header'>
-        <tr><th>Comps</th><th>Quantity</th></tr>
-        </tbody>
-        <tbody class="rare">
-            <tr><td>Ancient</td><td></td></tr>
-            <tr><td>Armadyl</td><td></td></tr>
-            <tr><td>Ascended</td><td></td></tr>
-            <tr><td>Avernic</td><td></td></tr>
-            <tr><td>Bandos</td><td></td></tr>
-            <tr><td>Brassican</td><td></td></tr>
-            <tr><td>Clockwork</td><td></td></tr>
-            <tr><td>Corporeal</td><td></td></tr>
-            <tr><td>Culinary</td><td></td></tr>
-            <tr><td>Cywir</td><td></td></tr>
-            <tr><td>Dragonfire</td><td></td></tr>
-            <tr><td>Explosive</td><td></td></tr>
-            <tr><td>Faceted</td><td></td></tr>
-            <tr><td>Fortunate</td><td></td></tr>
-            <tr><td>Fungal</td><td></td></tr>
-            <tr><td>Harnessed</td><td></td></tr>
-            <tr><td>Ilujankan</td><td></td></tr>
-            <tr><td>Knightly</td><td></td></tr>
-            <tr><td>Noxious</td><td></td></tr>
-            <tr><td>Oceanic</td><td></td></tr>
-            <tr><td>Pestiferous</td><td></td></tr>
-            <tr><td>Resilient</td><td></td></tr>
-            <tr><td>Rumbling</td><td></td></tr>
-            <tr><td>Saradomin</td><td></td></tr>
-            <tr><td>Seren</td><td></td></tr>
-            <tr><td>Shadow</td><td></td></tr>
-            <tr><td>Shifting</td><td></td></tr>
-            <tr><td>Silent</td><td></td></tr>
-            <tr><td>Undead</td><td></td></tr>
-            <tr><td>Zamorak</td><td></td></tr>
-            <tr><td>Zaros</td><td></td></tr>
-        </tbody>
-        <tbody class="uncommon">
-            <tr><td>Dextrous</td><td></td></tr>
-            <tr><td>Direct</td><td></td></tr>
-            <tr><td>Enhancing</td><td></td></tr>
-            <tr><td>Ethereal</td><td></td></tr>
-            <tr><td>Evasive</td><td></td></tr>
-            <tr><td>Healthy</td><td></td></tr>
-            <tr><td>Heavy</td><td></td></tr>
-            <tr><td>Imbued</td><td></td></tr>
-            <tr><td>Light</td><td></td></tr>
-            <tr><td>Living</td><td></td></tr>
-            <tr><td>Pious</td><td></td></tr>
-            <tr><td>Powerful</td><td></td></tr>
-            <tr><td>Precious</td><td></td></tr>
-            <tr><td>Precise</td><td></td></tr>
-            <tr><td>Protective</td><td></td></tr>
-            <tr><td>Refined</td><td></td></tr>
-            <tr><td>Sharp</td><td></td></tr>
-            <tr><td>Strong</td><td></td></tr>
-            <tr><td>Stunning</td><td></td></tr>
-            <tr><td>Subtle</td><td></td></tr>
-            <tr><td>Swift</td><td></td></tr>
-            <tr><td>Variable</td><td></td></tr>
-        </tbody>
-		<tbody class="common">
-        <tr><td>Base</td><td></td></tr>
-        <tr><td>Blade</td><td></td></tr>
-        <tr><td>Clear</td><td></td></tr>
-        <tr><td>Connector</td><td></td></tr>
-        <tr><td>Cover</td><td></td></tr>
-        <tr><td>Crafted</td><td></td></tr>
-        <tr><td>Crystal</td><td></td></tr>
-        <tr><td>Deflecting</td><td></td></tr>
-        <tr><td>Delicate</td><td></td></tr>
-        <tr><td>Flexible</td><td></td></tr>
-        <tr><td>Head</td><td></td></tr>
-        <tr><td>Magic</td><td></td></tr>
-        <tr><td>Metallic</td><td></td></tr>
-        <tr><td>Organic</td><td></td></tr>
-        <tr><td>Padded</td><td></td></tr>
-        <tr><td>Plated</td><td></td></tr>
-        <tr><td>Simple</td><td></td></tr>
-        <tr><td>Smooth</td><td></td></tr>
-        <tr><td>Spiked</td><td></td></tr>
-        <tr><td>Spiritual</td><td></td></tr>
-        <tr><td>Stave</td><td></td></tr>
-        <tr><td>Tensile</td><td></td></tr>
-        <tr><td>Junk</td><td></td></tr>
-		</tbody>
-    </table>
-	</div>
-	
-<script src="scripts/script.js"></script>	
+    test
+    <div class="main">
+        <table class="ui">
+            <tbody>
+                <tr>
+                    <th><button class="tracker nisbutton">Start</button></th>
+                    <th><button class="clear nisbutton">Clear</button></th>
+                </tr>
+                <tr>
+                    <th>Edit Mode:</th>
+                    <th><input type="checkbox" class="edit"></th>
+                </tr>
+                <tr>
+                    <th>Actions</th>
+                    <th><span class='actions'></span></th>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <tbody class='header'>
+                <tr>
+                    <th>Comps</th>
+                    <th>Quantity</th>
+                </tr>
+            </tbody>
+            <tbody class="rare">
+                <tr>
+                    <td>Ancient</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Armadyl</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ascended</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Avernic</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Bandos</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Brassican</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Clockwork</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Corporeal</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Culinary</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Cywir</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Dragonfire</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Explosive</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Faceted</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fortunate</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Fungal</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Harnessed</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ilujankan</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Knightly</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Noxious</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Oceanic</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Pestiferous</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Resilient</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Rumbling</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Saradomin</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Seren</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Shadow</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Shifting</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Silent</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Undead</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Zamorak</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Zaros</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody class="uncommon">
+                <tr>
+                    <td>Dextrous</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Direct</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Enhancing</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Ethereal</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Evasive</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Healthy</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Heavy</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Imbued</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Light</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Living</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Pious</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Powerful</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Precious</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Precise</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Protective</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Refined</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Sharp</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Strong</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Stunning</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Subtle</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Swift</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Variable</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tbody class="common">
+                <tr>
+                    <td>Base</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Blade</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Clear</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Connector</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Cover</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Crafted</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Crystal</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Deflecting</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Delicate</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Flexible</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Head</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Magic</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Metallic</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Organic</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Padded</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Plated</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Simple</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Smooth</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Spiked</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Spiritual</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Stave</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Tensile</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Junk</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="scripts/script.js"></script>
 </body>
+
 </html>
