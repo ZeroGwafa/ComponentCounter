@@ -38,8 +38,13 @@ function readChatbox() {
             mats += "s";
             console.log("Now " + mats);
         }
-        compsList[mats].qty += count; //add count to index of second list.
-        tidyTable(mats);
+        if (compsList[mats]) {
+            compsList[mats].qty += count; //add count to index of second list.
+            tidyTable(mats);
+        } else {
+            console.warn("Invalid component.  Ignoring.");
+            continue;
+        }
     }
 }
 
