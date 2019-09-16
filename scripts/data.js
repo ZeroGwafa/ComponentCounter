@@ -4,6 +4,10 @@ if (localStorage.getItem("mats") != null) {
     compsList = JSON.parse(localStorage.mats)
 } else {
     compsList = {
+        "Test components": {
+            type: "common",
+            qty: 0
+        },
         "Ancient components": {
             type: "rare",
             qty: 0

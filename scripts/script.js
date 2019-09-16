@@ -38,7 +38,7 @@ function readChatbox() {
             mats += "s";
             console.log("Now " + mats);
         }
-        compsList[mats].qty++; //add count to index of second list.
+        compsList[mats].qty += count; //add count to index of second list.
         tidyTable(mats);
     }
 }
