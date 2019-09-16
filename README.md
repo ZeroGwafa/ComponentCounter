@@ -36,3 +36,6 @@ Be sure to Click "Start" to once again track components, as it will be disabled 
 
 Action Counter
 - This will track how many times components were added to the list.  Good for tracking how many time Scavenging activated, or tracking how many objects you've dissassembled.
+
+Export to CSV
+- Clicking this will generate a CSV file with your current component stats.  
