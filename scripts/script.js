@@ -10,8 +10,10 @@ reader.readargs = {
 };
 reader.find();
 
-var p = reader.pos;
-alt1.overLayRect(a1lib.mixcolor(255, 255, 255), p.mainbox.rect.x, p.mainbox.rect.y, p.mainbox.rect.width, p.mainbox.rect.height, 2000, 1);
+try {
+    var p = reader.pos;
+    alt1.overLayRect(a1lib.mixcolor(255, 255, 255), p.mainbox.rect.x, p.mainbox.rect.y, p.mainbox.rect.width, p.mainbox.rect.height, 2000, 1);
+} catch {}
 
 var chatCheck = reader.read();
 
