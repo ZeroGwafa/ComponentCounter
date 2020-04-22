@@ -1,5 +1,5 @@
 var compsList = {
-    "Ancient components": {
+    "Third-age components": {
         type: "rare",
         qty: 0
     },
