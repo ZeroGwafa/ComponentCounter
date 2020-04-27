@@ -4,7 +4,8 @@ reader.readargs = {
         a1lib.mixcolor(255, 255, 255), //Common Mats
         a1lib.mixcolor(255, 128, 0), //Uncommon Mats
         a1lib.mixcolor(255, 165, 0), //Scavenging comps
-        a1lib.mixcolor(255, 0, 0) //Rare Mats
+        a1lib.mixcolor(255, 0, 0), //Rare Mats
+		a1lib.mixcolor(67, 188, 188) //Ancient components
     ],
     backwards: true
 };
@@ -19,7 +20,7 @@ try {
 var chatCheck = reader.read();
 
 var count, mats, index;
-var actions = 0;
+var actions = localStorage.actions ? Number(localStorage.actions) : 0;
 
 function readChatbox() {
     var opts = reader.read() || [];
@@ -34,9 +35,14 @@ function readChatbox() {
     console.log(comps);
     if (comps != null && comps.length > -1)
         actions++;
+        localStorage.actions = actions;
+        $(".actions").text(actions);
     for (var x in comps) {
         console.log(comps[x]);
         count = Number(comps[x].match(/\d+/)); //1
+        if (count == 0) {
+            continue;
+        }
         mats = comps[x].match(/[^You receive \d]\w+( \w+)?/)[0]; //Junk
         if (mats.match(/parts|components|Junk/))
             console.log("is fine");
@@ -65,6 +71,9 @@ function buildTable() {
         if (compsList[x].type === "common") {
             $(".common").append(`<tr data-name="${x}"><td>${x.split(" ")[0]}</td><td class='qty'></td></tr>`);
         }
+        if (compsList[x].type === "ancient") {
+            $(".ancient").append(`<tr data-name="${x}"><td>${x.split(" ")[0]}</td><td class='qty'></td></tr>`);
+        }
     }
 }
 
@@ -81,8 +90,6 @@ function tidyTable(flashRow) {
     $(`[data-name='${mats}']`).css({ "background-color": "lime" }).animate({
         backgroundColor: $.Color("rgba(0, 0, 0, 0)")
     }, 500, function() { $(this).removeAttr("style") });
-
-    $(".actions").text(actions);
 }
 
 buildTable();
@@ -122,6 +129,7 @@ $("button.clear").click(function() {
         compsList[x].qty = 0;
     }
     actions = 0;
+    localStorage.removeItem("actions");
     location.reload();
 });
 
