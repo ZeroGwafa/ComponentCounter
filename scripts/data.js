@@ -302,23 +302,7 @@ var compsList = {
     "Junk": {
         type: "common",
         qty: 0
-    },
-	"Classic components": {
-		type: "ancient",
-		qty: 0
-	},
-	"Historic components": {
-		type: "ancient",
-		qty: 0
-	},
-	"Timeworn components": {
-		type: "ancient",
-		qty: 0
-	},
-	"Vintage components": {
-		type: "ancient",
-		qty: 0
-	}
+    }
 }
 
 if (localStorage.getItem("mats") != null) {
