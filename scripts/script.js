@@ -38,7 +38,7 @@ function readChatbox() {
   }
 
   var comps = chat.match(
-    /\d+ x \w+( \w+)?[^\d+:]|You receive \d+ \w+( \w+)?[^\d+:]/g
+    /\d+ x [\w-]+( \w+)?[^\d+:]|You receive \d+ [\w-]+( \w+)?[^\d+:]/g
   );
   if (comps != null && comps.length > -1) actions++;
   for (var x in comps) {
