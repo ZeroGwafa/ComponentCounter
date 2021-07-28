@@ -1,8 +1,8 @@
 # ComponentCounter
 
-Install with this link (Alt1 Required): 
+Open this link in an Alt1 Browser
 
-alt1://addapp/https://zerogwafa.github.io/ComponentCounter/appconfig.json
+https://zerogwafa.github.io/ComponentCounter/
 
 Tracks Invention materials from the following sources:
 - Standard Dissassembling
@@ -37,3 +37,6 @@ Be sure to Click "Start" to once again track components, as it will be disabled 
 
 ### Export to CSV
 - Clicking this will generate a CSV file with your current component stats.  
+
+### Chat Selector
+- Useful if you want the app to target a specific window.

@@ -1,30 +1,60 @@
-var reader = new ChatBoxReader();
+//Enable "Add App" button for Alt1 Browser.
+A1lib.identifyApp("appconfig.json");
+
+let reader = new Chatbox.default();
 reader.readargs = {
   colors: [
-    a1lib.mixcolor(255, 255, 255), //Common Mats
-    a1lib.mixcolor(255, 128, 0), //Uncommon Mats
-    a1lib.mixcolor(255, 165, 0), //Scavenging comps
-    a1lib.mixcolor(255, 0, 0), //Rare Mats
-    a1lib.mixcolor(67, 188, 188), //Ancient components
+    A1lib.mixColor(255, 255, 255), //Common Mats
+    A1lib.mixColor(255, 128, 0), //Uncommon Mats
+    A1lib.mixColor(255, 165, 0), //Scavenging comps
+    A1lib.mixColor(255, 0, 0), //Rare Mats
+    A1lib.mixColor(67, 188, 188), //Ancient components
   ],
   backwards: true,
 };
+
 reader.find(); //Find the chat box.
 reader.read(); //Get the initial read, to not report on initial load.
 
-//Attempt to show a temporary rectangle around the chatbox.  skip if overlay is not enabled.
-try {
-  var p = reader.pos;
-  alt1.overLayRect(
-    a1lib.mixcolor(255, 255, 255),
-    p.mainbox.rect.x,
-    p.mainbox.rect.y,
-    p.mainbox.rect.width,
-    p.mainbox.rect.height,
-    2000,
-    1
-  );
-} catch {}
+function showSelectedChat(chat) {
+  //Attempt to show a temporary rectangle around the chatbox.  skip if overlay is not enabled.
+  try {
+    alt1.overLayRect(
+      A1lib.mixColor(0, 255, 0),
+      chat.mainbox.rect.x,
+      chat.mainbox.rect.y,
+      chat.mainbox.rect.width,
+      chat.mainbox.rect.height,
+      2000,
+      5
+    );
+  } catch { }
+}
+
+//Find all visible chatboxes on screen
+reader.find();
+reader.read();
+let findChat = setInterval(function () {
+  if (reader.pos === null)
+    reader.find();
+  else {
+    clearInterval(findChat);
+    reader.pos.boxes.map((box, i) => {
+      $(".chat").append(`<option value=${i}>Chat ${i}</option>`);
+    });
+
+    if (localStorage.ccChat) {
+      reader.pos.mainbox = reader.pos.boxes[localStorage.ccChat];
+    } else {
+      //If multiple boxes are found, this will select the first, which should be the top-most chat box on the screen.
+      reader.pos.mainbox = reader.pos.boxes[0];
+    }
+    showSelectedChat(reader.pos);
+    setInterval(function () {
+      readChatbox();
+    }, 600);
+  }
+}, 1000);
 
 var count, mats, index;
 var actions = 0;
@@ -189,4 +219,11 @@ $(".export").click(function () {
       document.body.removeChild(link);
     }
   }
+});
+
+$(".chat").change(function () {
+  reader.pos.mainbox = reader.pos.boxes[$(this).val()];
+  showSelectedChat(reader.pos);
+  localStorage.setItem("ccChat", $(this).val());
+  $(this).val("");
 });

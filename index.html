@@ -4,12 +4,12 @@
     <link rel="stylesheet" type="text/css" href="https://runeapps.org/nis/nis.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <script type="text/javascript" src="/ComponentCounter/scripts/jquery.js"></script>
-    <script type="text/javascript" src="/ComponentCounter/scripts/jquery-color.js"></script>
-    <script type="text/javascript" src="https://runeapps.org/runeappslib.js"></script>
-    <script type="text/javascript" src="https://runeapps.org/alt1lib.js"></script>
-    <script type="text/javascript" src="https://runeapps.org/imagedetect.js"></script>
-    <script type="text/javascript" src="https://runeapps.org/imagelibs/chatbox.js"></script>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/jquery-color.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://runeapps.org/runeappslib.css">
+    <script src="https://www.unpkg.com/@alt1/base/dist/index.bundle.js"></script>
+    <script src="https://www.unpkg.com/@alt1/ocr/dist/index.bundle.js"></script>
+    <script src="https://www.unpkg.com/@alt1/chatbox/dist/index.bundle.js"></script>
 </head>
 
 <body class="nis">
@@ -30,6 +30,12 @@
                 <tr>
                     <th>Edit Mode:</th>
                     <th><input type="checkbox" class="edit"></th>
+                </tr>
+                <tr>
+                    <th>Select Chat:</th>
+                    <td><select class="chat">
+                        <option value="">Select Chat</option>
+                    </select></td>
                 </tr>
                 <tr>
                     <th colspan=2><span class='export'>Export data as CSV</span></th>
