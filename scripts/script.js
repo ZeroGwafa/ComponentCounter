@@ -15,9 +15,6 @@ reader.readargs = {
   backwards: true,
 };
 
-reader.find(); //Find the chat box.
-reader.read(); //Get the initial read, to not report on initial load.
-
 function showSelectedChat(chat) {
   //Attempt to show a temporary rectangle around the chatbox.  skip if overlay is not enabled.
   try {
@@ -74,6 +71,7 @@ function readChatbox() {
   );
   if (comps != null && comps.length > -1) actions++;
   for (var x in comps) {
+    console.log(chat)
     count = Number(comps[x].match(/\d+/)); //1
     mats = comps[x].match(/[^You receive \d]\w+( \w+)?/)[0]; //Junk
     if (!mats.match(/parts|components|Junk/)) mats += "s";
