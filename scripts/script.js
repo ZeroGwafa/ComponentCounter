@@ -76,12 +76,14 @@ window.setTimeout(function () {
       console.log(chat)
       count = Number(comps[x].match(/\d+/)); //1
       mats = comps[x].match(/[^You receive \d]\w+( \w+)?/)[0]; //Junk
+      if(mats == "Third") mats = "Third-age components"
       if (!mats.match(/parts|components|Junk/)) mats += "s";
       if (compsList[mats]) {
         compsList[mats].qty += count; //add count to index of second list.
         tidyTable(mats);
       } else {
         console.warn("Invalid component.  Ignoring.");
+        console.log({comps,mats});
         continue;
       }
     }
