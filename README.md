@@ -25,13 +25,6 @@ The table will auto-populate and keep track of the components that you have rece
 
 Click "Stop" to stop tracking.
 
-### Edit Mode
-
-I have included an Edit mode, which will display all component rows, you can then edit the number of components for any row (in case you want to track all comps, including the ones you already have).  Uncheck the edit mode checkbox to save the changes.
-
-Be sure to Click "Start" to once again track components, as it will be disabled while editing.
-
-
 ### Action Counter
 - This will track how many times components were added to the list.  Good for tracking how many time Scavenging activated, or tracking how many objects you've dissassembled.
 
