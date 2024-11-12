@@ -1,7 +1,8 @@
 {
 	"scripts": {
 		"build": "webpack",
-		"watch": "webpack --watch"
+		"watch": "webpack --watch",
+		"deploy": "gh-pages -d dist"
 	},
 	"dependencies": {
 		"alt1": "^0.0.9"
