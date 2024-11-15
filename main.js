@@ -5184,6 +5184,7 @@ function updateSaveData() {
                 if (name_2 == "materials" && lsData[name_2]) {
                     // Update Quantity of existing Material
                     if (Object.keys(value).length == 2) {
+                        console.log(value);
                         lsData[name_2][value["name"]].qty += Number(value["quantity"]);
                         localStorage.setItem(appName, JSON.stringify(lsData));
                         buildTable();
