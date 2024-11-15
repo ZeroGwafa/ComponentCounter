@@ -345,6 +345,7 @@ async function updateSaveData(...dataset) {
 		if (name == "materials" && lsData[name]) {
 			// Update Quantity of existing Material
 			if (Object.keys(value).length == 2) {
+				console.log(value);
 				lsData[name][value["name"]].qty += Number(value["quantity"]);
 				localStorage.setItem(appName, JSON.stringify(lsData));
 				buildTable();
@@ -422,6 +423,7 @@ export async function runTests() {
 		uncommon_eol: require("./images/tests/uncommon_eol.data.png"),
 		uncommon_rare: require("./images/tests/uncommon_rare.data.png"),
 		auto_diss: require("./images/tests/auto_diss.data.png"),
+		uncommon_ancient: require("./images/tests/uncommon_ancient.data.png"),
 	});
 	await tests.promise;
 	for (let testid in tests.raw) {
