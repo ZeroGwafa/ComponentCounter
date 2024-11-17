@@ -256,7 +256,27 @@ function processMaterials(chatLine) {
 		};
 
 		updateSaveData({ materials: material });
+		updateRow(material.name);
 	}
+}
+
+function updateRow(matName) {
+	const mats = getSaveData("materials");
+
+	const row = document.querySelector(`#${matName}`) as HTMLElement;
+	const qty = document.querySelector(`#${matName} .quantity`) as HTMLElement;
+
+	qty.innerText = mats[matName].qty;
+
+	if (row.classList.contains("hide")) {
+		row.classList.remove("hide");
+	}
+
+	row.classList.add("new");
+	row.addEventListener("animationend", () => {
+		row.classList.remove("new");
+	});
+
 }
 
 function buildTable() {
@@ -269,11 +289,14 @@ function buildTable() {
 
 	const matNames = Object.keys(mats).sort();
 	for (let mat of matNames) {
-		if (mats[mat]["qty"] > 0) {
-			document
-				.querySelector(`.${mats[mat]["type"]} > .col`)
-				.insertAdjacentHTML("beforeend", `<div class='mats row'><div class='mats col'>${mat}</div><div class='col'>${mats[mat]["qty"]}</div></div>`);
-		}
+		document
+			.querySelector(`.${mats[mat]["type"]} > .col`)
+			.insertAdjacentHTML(
+				"beforeend",
+				`<div id="${mat}" class='mats row ${mats[mat]["qty"] == 0 ? "hide" : ""}'><div class='mats col'>${mat}</div><div class='col quantity'>${
+					mats[mat]["qty"]
+				}</div></div>`
+			);
 	}
 }
 
@@ -333,6 +356,7 @@ exportButton.addEventListener("click", function () {
 // Factory Reset logic
 clearButton.addEventListener("click", function () {
 	localStorage.removeItem(appName);
+	sessionStorage.removeItem(`${appName}chatHistory`)
 	location.reload();
 });
 
@@ -348,7 +372,6 @@ async function updateSaveData(...dataset) {
 				console.log(value);
 				lsData[name][value["name"]].qty += Number(value["quantity"]);
 				localStorage.setItem(appName, JSON.stringify(lsData));
-				buildTable();
 				continue;
 			}
 		}

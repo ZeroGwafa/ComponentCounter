@@ -72,55 +72,74 @@ html {
 }
 
 .row {
-    text-align: center;
+	text-align: center;
 }
 
 .matHeader {
-    border-top: white solid .5px;
-    background: url('https://runeapps.org/nis/alt1-currentskin/nisbutton.png') 0px -100%/24px 400% repeat content-box;
-    color: black;
-    font-family: 'trajan-pro-3';
+	border-top: white solid 0.5px;
+	background: url("https://runeapps.org/nis/alt1-currentskin/nisbutton.png") 0px -100%/24px 400% repeat content-box;
+	color: black;
+	font-family: "trajan-pro-3";
 }
 
-.mats>.row,
+.mats > .row,
 .matHeader * {
-    border-bottom: white solid .5px;
-    border-right: white solid .5px;
+	border-bottom: white solid 0.5px;
+	border-right: white solid 0.5px;
 }
 
 .matHeader,
-.mats>.row * {
-    border-left: white solid .5px;
+.mats > .row * {
+	border-left: white solid 0.5px;
 }
 
 .scroll {
-    overflow-y: scroll;
-    height: calc(100% - 39px);
+	overflow-y: scroll;
+	height: calc(100% - 39px);
 }
 
 .scroll::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 body.nis:not(.artefact)::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 
 body.nis:not(.artefact) {
-    overflow: scroll !important;
-    /* min-width: 315px; */
-    height: calc(100vh - 10px);
+	overflow: scroll !important;
+	/* min-width: 315px; */
+	height: calc(100vh - 10px);
 }
 
 .container * {
-    font-weight: bold;
-    font-size: 10pt;
+	font-weight: bold;
+	font-size: 10pt;
 }
 
 .container {
-    margin-top: 10px
+	margin-top: 10px;
 }
 
 .nisbutton {
-    font-size: 8pt !important;
+	font-size: 8pt !important;
+}
+
+.hide {
+	display: none;
+}
+
+.new {
+	animation: flashNew 1s;
+}
+
+@keyframes flashNew {
+	from {
+		background-color: lime;
+		color: black;
+	}
+	to {
+		background-color: none;
+		color: none;
+	}
 }
