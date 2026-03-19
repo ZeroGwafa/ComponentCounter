@@ -10,7 +10,7 @@ Tracks Invention materials from the following sources:
 - Spring Cleaner
 - Scavenging
 
-Keeps data until you hit the "Clear" button.
+Keeps data until you hit the "Factory Reset" button, found when clicking "Settings".
 
 ## Instructions:
     1. Open app with RuneScape window visible.
@@ -22,8 +22,6 @@ Keeps data until you hit the "Clear" button.
 The app will automatically start tracking as soon as it is opened.
 
 The table will auto-populate and keep track of the components that you have received.
-
-Click "Stop" to stop tracking.
 
 ### Action Counter
 - This will track how many times components were added to the list.  Good for tracking how many time Scavenging activated, or tracking how many objects you've dissassembled.
