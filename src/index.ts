@@ -75,7 +75,7 @@ reader.forwardnudges.push({
 				maybe_one.x + maybe_one.basechar.width + ctx.font.spacewidth,
 				ctx.baseliney,
 				false,
-				true
+				true,
 			);
 			if (maybe_x?.chr == "x") {
 				ctx.addfrag({ color: [255, 128, 0], index: -1, text: " 1 x", xstart: startx, xend: startx + maybe_one.basechar.width + ctx.font.spacewidth });
@@ -101,7 +101,7 @@ reader.forwardnudges.push({
 				maybe_one.x + maybe_one.basechar.width + ctx.font.spacewidth,
 				ctx.baseliney,
 				false,
-				true
+				true,
 			);
 			if (maybe_x?.chr == "x") {
 				ctx.addfrag({ color: [255, 0, 0], index: -1, text: " 1", xstart: startx, xend: startx + maybe_one.basechar.width + ctx.font.spacewidth });
@@ -127,7 +127,7 @@ reader.forwardnudges.push({
 				maybe_one.x + maybe_one.basechar.width + ctx.font.spacewidth,
 				ctx.baseliney,
 				false,
-				true
+				true,
 			);
 			if (maybe_x?.chr == "x") {
 				ctx.addfrag({ color: [67, 188, 188], index: -1, text: " 1", xstart: startx, xend: startx + maybe_one.basechar.width + ctx.font.spacewidth });
@@ -256,6 +256,13 @@ function processMaterials(chatLine) {
 		};
 
 		updateSaveData({ materials: material });
+
+		console.log({
+			material: material.name,
+			quantity: material.quantity,
+			chatLine,
+		});
+
 		updateRow(material.name);
 	}
 }
@@ -276,7 +283,6 @@ function updateRow(matName) {
 	row.addEventListener("animationend", () => {
 		row.classList.remove("new");
 	});
-
 }
 
 function buildTable() {
@@ -295,7 +301,7 @@ function buildTable() {
 				"beforeend",
 				`<div id="${mat}" class='mats row ${mats[mat]["qty"] == 0 ? "hide" : ""}'><div class='mats col'>${mat}</div><div class='col quantity'>${
 					mats[mat]["qty"]
-				}</div></div>`
+				}</div></div>`,
 			);
 	}
 }
@@ -356,7 +362,7 @@ exportButton.addEventListener("click", function () {
 // Factory Reset logic
 clearButton.addEventListener("click", function () {
 	localStorage.removeItem(appName);
-	sessionStorage.removeItem(`${appName}chatHistory`)
+	sessionStorage.removeItem(`${appName}chatHistory`);
 	location.reload();
 });
 
@@ -369,7 +375,6 @@ async function updateSaveData(...dataset) {
 		if (name == "materials" && lsData[name]) {
 			// Update Quantity of existing Material
 			if (Object.keys(value).length == 2) {
-				console.log(value);
 				lsData[name][value["name"]].qty += Number(value["quantity"]);
 				localStorage.setItem(appName, JSON.stringify(lsData));
 				continue;
