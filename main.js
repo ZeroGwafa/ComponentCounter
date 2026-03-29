@@ -5330,6 +5330,11 @@ function processMaterials(chatLine) {
             name: name_1,
         };
         updateSaveData({ materials: material });
+        console.log({
+            material: material.name,
+            quantity: material.quantity,
+            chatLine: chatLine,
+        });
         updateRow(material.name);
     }
 }
@@ -5436,7 +5441,6 @@ function updateSaveData() {
                 if (name_2 == "materials" && lsData[name_2]) {
                     // Update Quantity of existing Material
                     if (Object.keys(value).length == 2) {
-                        console.log(value);
                         lsData[name_2][value["name"]].qty += Number(value["quantity"]);
                         localStorage.setItem(appName, JSON.stringify(lsData));
                         continue;
