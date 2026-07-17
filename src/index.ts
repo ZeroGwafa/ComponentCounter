@@ -233,8 +233,8 @@ function processChat(opts) {
 
 function processMaterials(chatLine) {
 	actions.innerText = String(Number(actions.innerText) + 1);
-	const regex1 = /(\d+) x (\w+)/g;
-	const regex2 = /You receive (\d+) (\w+)/g;
+	const regex1 = /(\d+) x ([\w-]+)/g;
+	const regex2 = /You receive (\d+) ([\w-]+)/g;
 	let matches;
 	let useRegex = regex1;
 
