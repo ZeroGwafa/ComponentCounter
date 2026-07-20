@@ -5309,8 +5309,8 @@ function processChat(opts) {
 }
 function processMaterials(chatLine) {
     actions.innerText = String(Number(actions.innerText) + 1);
-    var regex1 = /(\d+) x (\w+)/g;
-    var regex2 = /You receive (\d+) (\w+)/g;
+    var regex1 = /(\d+) x ([\w-]+)/g;
+    var regex2 = /You receive (\d+) ([\w-]+)/g;
     var matches;
     var useRegex = regex1;
     if (chatLine.includes("Materials gained") || chatLine.includes("Scavenging perk")) {
